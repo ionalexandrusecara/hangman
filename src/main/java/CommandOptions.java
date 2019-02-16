@@ -8,7 +8,6 @@ public class CommandOptions {
 	CommandOptions(String[] args) {
 		maxGuesses = 10;
 		maxHints = 2;
-		
 		wordsDictionary = "";
 		
 		for(int i = 0; i < args.length; ++i) {
