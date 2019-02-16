@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Hangman {
 
-	static void doStuff(Scanner sc, CommandOptions opts, GameState g) {
+	static void doStuff(Scanner scanner, CommandOptions commandOptions, GameState gameState) {
 
 		boolean correct;
 
-		if (opts.wordsDictionary == "") {
+		if (commandOptions.wordsDictionary == "") {
 
 			System.out.println("  1. Counties");
 			System.out.println("  2. Countries");
@@ -14,38 +14,38 @@ public class Hangman {
 
 			System.out.print("Pick a category:");
 
-			g = new GameState(Words.randomWord(sc.nextInt()), opts.maxGuesses, opts.maxHints);
+			gameState = new GameState(Words.randomWord(scanner.nextInt()), commandOptions.maxGuesses, commandOptions.maxHints);
 		} else {
-			g = new GameState(Words.randomWord(opts.wordsDictionary), opts.maxGuesses, opts.maxHints);
+			gameState = new GameState(Words.randomWord(commandOptions.wordsDictionary), commandOptions.maxGuesses, commandOptions.maxHints);
 		}
 
-		while (!g.won() && !g.lost()) {
-			g.showWord(g.word);
+		while (!gameState.won() && !gameState.lost()) {
+			gameState.showWord(gameState.word);
 
-			System.out.println("Guesses remaining: " + g.wrong);
+			System.out.println("Guesses remaining: " + gameState.wrong);
 
-			correct = g.guessLetter();
+			correct = gameState.guessLetter();
 
 			if (correct) System.out.println("Good guess!");
 			if (!correct) System.out.println("Wrong guess!");
 		}
 
-		if (g.won()) {
+		if (gameState.won()) {
 			System.out.println("Well done!");
-			System.out.println("You took " + g.g + " guesses");
+			System.out.println("You took " + gameState.g + " guesses");
 		} else {
-			System.out.println("You lost! The word was " + g.word);
+			System.out.println("You lost! The word was " + gameState.word);
 		}
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		GameState g = null;
-		CommandOptions opts;
+		Scanner scanner = new Scanner(System.in);
+		GameState gameState = null;
+		CommandOptions commandOptions;
 
-		opts = new CommandOptions(args);
+		commandOptions = new CommandOptions(args);
 
-		doStuff(sc, opts, g);
+		doStuff(scanner, commandOptions, gameState);
 
 	}
 }
