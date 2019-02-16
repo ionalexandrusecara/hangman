@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class Words {
+public class Dictionary {
 
 	static String[] countyNames = { "Argyll and Bute", "Caithness",  "Kingdom of Fife",
 			            "East Lothian", "Highland", "Dumfries and Galloway",
