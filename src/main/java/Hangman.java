@@ -6,7 +6,7 @@ public class Hangman {
 
 		boolean correct;
 
-		if (opts.wordsource == "") {
+		if (opts.wordsDictionary == "") {
 
 			System.out.println("  1. Counties");
 			System.out.println("  2. Countries");
@@ -14,9 +14,9 @@ public class Hangman {
 
 			System.out.print("Pick a category:");
 
-			g = new GameState(Words.randomWord(sc.nextInt()), opts.maxguesses, opts.maxhints);
+			g = new GameState(Words.randomWord(sc.nextInt()), opts.maxGuesses, opts.maxHints);
 		} else {
-			g = new GameState(Words.randomWord(opts.wordsource), opts.maxguesses, opts.maxhints);
+			g = new GameState(Words.randomWord(opts.wordsDictionary), opts.maxGuesses, opts.maxHints);
 		}
 
 		while (!g.won() && !g.lost()) {
