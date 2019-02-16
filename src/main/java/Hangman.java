@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Hangman {
 
-	static void doStuff(Scanner scanner, CommandOptions commandOptions, GameState gameState) {
+	static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) {
 
 		boolean isGuessCorrect;
 
@@ -45,7 +45,7 @@ public class Hangman {
 
 		commandOptions = new CommandOptions(args);
 
-		doStuff(scanner, commandOptions, gameState);
+		displayCLI(scanner, commandOptions, gameState);
 
 	}
 }
