@@ -4,7 +4,7 @@ public class Hangman {
 
 	static void doStuff(Scanner scanner, CommandOptions commandOptions, GameState gameState) {
 
-		boolean correct;
+		boolean isGuessCorrect;
 
 		if (commandOptions.wordsDictionary == "") {
 
@@ -24,10 +24,10 @@ public class Hangman {
 
 			System.out.println("Guesses remaining: " + gameState.numberOfGuessesRemaining);
 
-			correct = gameState.guessLetter();
+			isGuessCorrect = gameState.guessLetter();
 
-			if (correct) System.out.println("Good guess!");
-			if (!correct) System.out.println("Wrong guess!");
+			if (isGuessCorrect) System.out.println("Good guess!");
+			if (!isGuessCorrect) System.out.println("Wrong guess!");
 		}
 
 		if (gameState.won()) {
