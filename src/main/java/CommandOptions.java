@@ -1,11 +1,11 @@
-public class CommandOpts {
+public class CommandOptions {
 
 	public int maxguesses;
 	public int maxhints;
 	
 	String wordsource;
-	
-	CommandOpts(String[] args) {
+
+	CommandOptions(String[] args) {
 		maxguesses = 10;
 		maxhints = 2;
 		

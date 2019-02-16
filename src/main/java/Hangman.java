@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Hangman {
 
-	static void doStuff(Scanner sc, CommandOpts opts, GameState g) {
+	static void doStuff(Scanner sc, CommandOptions opts, GameState g) {
 
 		boolean correct;
 
@@ -41,9 +41,9 @@ public class Hangman {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		GameState g = null;
-		CommandOpts opts;
+		CommandOptions opts;
 
-		opts = new CommandOpts(args);
+		opts = new CommandOptions(args);
 
 		doStuff(sc, opts, g);
 
