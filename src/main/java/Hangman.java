@@ -6,7 +6,7 @@ public class Hangman {
 
 		boolean isGuessCorrect;
 
-		if (commandOptions.wordsDictionary == "") {
+		if(commandOptions.wordsDictionary == "") {
 
 			System.out.println("  1. Counties");
 			System.out.println("  2. Countries");
@@ -39,7 +39,7 @@ public class Hangman {
 	}
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in, "UTF-8");
 		GameState gameState = null;
 		CommandOptions commandOptions;
 
