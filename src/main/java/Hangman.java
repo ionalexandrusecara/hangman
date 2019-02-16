@@ -14,9 +14,9 @@ public class Hangman {
 
 			System.out.print("Pick a category:");
 
-			gameState = new GameState(Words.randomWord(scanner.nextInt()), commandOptions.maxGuesses, commandOptions.maxHints);
+			gameState = new GameState(Words.getRandomName(scanner.nextInt()), commandOptions.maxGuesses, commandOptions.maxHints);
 		} else {
-			gameState = new GameState(Words.randomWord(commandOptions.wordsDictionary), commandOptions.maxGuesses, commandOptions.maxHints);
+			gameState = new GameState(Words.getRandomCustomName(commandOptions.wordsDictionary), commandOptions.maxGuesses, commandOptions.maxHints);
 		}
 
 		while (!gameState.won() && !gameState.lost()) {

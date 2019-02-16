@@ -3,36 +3,36 @@ import java.util.ArrayList;
 
 public class Words {
 
-	static String[] words1 = { "Argyll and Bute", "Caithness",  "Kingdom of Fife",
+	static String[] countyNames = { "Argyll and Bute", "Caithness",  "Kingdom of Fife",
 			            "East Lothian", "Highland", "Dumfries and Galloway",
 			            "Renfrewshire", "Scottish Borders", "Perth and Kinross" };
-	static String[] words2 = { "Scotland", "England", "Wales", "Northern Ireland", "Ireland", 
+	static String[] countryNames = { "Scotland", "England", "Wales", "Northern Ireland", "Ireland",
 			            "France", "Germany", "Netherlands", "Spain", "Portugal",
 			            "Belgium", "Luxembourg", "Switzerland", "Italy", "Greece" };
-	static String[] words3 = { "St Andrews", "Edinburgh", "Glasgow", "Kirkcaldy", "Perth",
+	static String[] cityNames = { "St Andrews", "Edinburgh", "Glasgow", "Kirkcaldy", "Perth",
 			            "Dundee", "Stirling", "Inverness", "Aberdeen", "Falkirk" };
 			
-	static ArrayList<String> customwords;
+	static ArrayList<String> customNames;
 	
-	public static String randomWord(int category) {
+	public static String getRandomName(int category) {
 		if (category == 1)
-			return words1[(int)(Math.random()*9)];
+			return countyNames[(int)(Math.random()*9)];
 		if (category == 2)
-			return words2[(int)(Math.random()*15)];
-		return words3[(int)(Math.random()*10)];
+			return countryNames[(int)(Math.random()*15)];
+		return cityNames[(int)(Math.random()*10)];
 	}
 	
-	public static String randomWord(String wordsource) {
+	public static String getRandomCustomName(String wordsource) {
 		String line;
-		customwords = new ArrayList<String>();
+		customNames = new ArrayList<String>();
 		
 		try {
 			FileReader file = new FileReader(wordsource);
 			BufferedReader reader = new BufferedReader(file);
 			while((line = reader.readLine()) != null) {
-                customwords.add(line);
+				customNames.add(line);
             }
-			return customwords.get((int)(Math.random()*customwords.size()));
+			return customNames.get((int)(Math.random()*customNames.size()));
 		} catch(FileNotFoundException e) {
 			System.out.println("File error");
 			return "";
