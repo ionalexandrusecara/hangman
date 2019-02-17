@@ -9,18 +9,18 @@ public class GameState {
 	public int numberOfHints;
 	
 	ArrayList<Character> lettersGuessedCorrect;
-	ArrayList<Character> lettersGuessesWrong;
+	ArrayList<Character> lettersGuessedWrong;
 	
 	public Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 	
 	public GameState(String targetName, int numberOfGuessesRemaining, int numberOfHints) {
 		this.targetName = targetName;
-		lettersGuessesWrong = new ArrayList<Character>();
+		lettersGuessedWrong = new ArrayList<Character>();
 		lettersGuessedCorrect = new ArrayList<Character>();
 		
 		for(int i = 0; i < targetName.length(); ++i) {
-			if (!lettersGuessesWrong.contains(Character.toLowerCase(targetName.charAt(i))))
-				lettersGuessesWrong.add(Character.toLowerCase(targetName.charAt(i)));
+			if (!lettersGuessedWrong.contains(Character.toLowerCase(targetName.charAt(i))))
+				lettersGuessedWrong.add(Character.toLowerCase(targetName.charAt(i)));
 		}
 		//System.out.println(missing);
 		
@@ -51,7 +51,7 @@ public class GameState {
 		
 		if (str.length() > 1) {
 			if (str==targetName) {
-				lettersGuessesWrong.clear();
+				lettersGuessedWrong.clear();
 				return true;
 			} else return false;
 		}
@@ -63,9 +63,9 @@ public class GameState {
 			return false;
 		}
 		
-		for(i = 0; i < lettersGuessesWrong.size(); ++i) { // Loop over the not got
-			if (lettersGuessesWrong.get(i) == letter) {
-				lettersGuessesWrong.remove(i);
+		for(i = 0; i < lettersGuessedWrong.size(); ++i) { // Loop over the not got
+			if (lettersGuessedWrong.get(i) == letter) {
+				lettersGuessedWrong.remove(i);
 				lettersGuessedCorrect.add(letter);
 				numberOfHints++;
 				return true;
@@ -78,11 +78,11 @@ public class GameState {
 	}
 	
 	boolean won() {
-		if (lettersGuessesWrong.size() == 0) return true; else return false;
+		if (lettersGuessedWrong.size() == 0) return true; else return false;
 	}
 
 	boolean lost() {
-		if (lettersGuessesWrong.size() > 0 && numberOfGuessesRemaining == 0) return true; else return false;
+		if (lettersGuessedWrong.size() > 0 && numberOfGuessesRemaining == 0) return true; else return false;
 	}
 
 	void hint() {
@@ -91,6 +91,6 @@ public class GameState {
 		}
 		
 		System.out.print("Try: ");
-		System.out.println(lettersGuessesWrong.get((int)(Math.random()*lettersGuessesWrong.size())));
+		System.out.println(lettersGuessedWrong.get((int)(Math.random()* lettersGuessedWrong.size())));
 	}
 }
