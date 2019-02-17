@@ -7,7 +7,7 @@ public class CommandOptions {
 
 	CommandOptions(String[] args) {
 		maxGuesses = 10;
-		maxHints = 2;
+		maxHints = 3;
 		wordsDictionary = "";
 		
 		for(int i = 0; i < args.length; ++i) {
@@ -30,7 +30,21 @@ public class CommandOptions {
 				i++;
 			}
 			else if (args[i].equals("--hints")) {
-				maxHints = Integer.parseInt(args[i+1]);
+				try{
+					maxHints = Integer.parseInt(args[i+1]);
+				} catch (NumberFormatException e){
+					System.out.println("Number of hints has to be an integer!");
+					maxHints = 3;
+					throw new NumberFormatException();
+				} catch (IndexOutOfBoundsException e){
+					System.out.println("Did not specify the number of hints! Setting hints default value!");
+					maxHints = 3;
+					throw new IndexOutOfBoundsException();
+				}
+				if(maxHints <= 0){
+					System.out.println("Invalid input - zero or negative number detected! Setting hints default value!");
+					maxHints = 3;
+				}
 				i++;
 			} else if(args[i].equals("--file")){
 				wordsDictionary = args[i+1];
