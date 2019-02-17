@@ -14,7 +14,6 @@ public class GameState {
 	public Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 	
 	public GameState(String targetName, int numberOfGuessesRemaining, int numberOfHints) {
-		this.targetName = targetName;
 		lettersGuessedWrong = new ArrayList<Character>();
 		lettersGuessedCorrect = new ArrayList<Character>();
 		
