@@ -21,6 +21,7 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 2);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 	@Test
@@ -41,6 +42,7 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 3);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 	@Test
@@ -61,6 +63,7 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 3);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 	@Test
@@ -75,6 +78,7 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 3);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 	@Test
@@ -89,6 +93,7 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 3);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 	@Test
@@ -102,6 +107,7 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 3);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 	@Test(expected = NullPointerException.class)
@@ -115,6 +121,79 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfHints, 3);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
+	}
+
+	@Test
+	public void zeroGuessesGameStateInitialisationTwo() {
+		GameState gameState = new GameState("London", 0, 3);
+
+		ArrayList<Character> letters = new ArrayList<>();
+		letters.add('l');
+		letters.add('o');
+		letters.add('n');
+		letters.add('d');
+
+		assertEquals(gameState.targetName, "London");
+		assertEquals(gameState.numberOfGuessesRemaining, 10);
+		assertEquals(gameState.numberOfHints, 3);
+		assertEquals(gameState.numberOfGuessesMade, 0);
+		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
+	}
+
+	@Test
+	public void negativeGuessesGameStateInitialisationTwo() {
+		GameState gameState = new GameState("London", -1, 3);
+
+		ArrayList<Character> letters = new ArrayList<>();
+		letters.add('l');
+		letters.add('o');
+		letters.add('n');
+		letters.add('d');
+
+		assertEquals(gameState.targetName, "London");
+		assertEquals(gameState.numberOfGuessesRemaining, 10);
+		assertEquals(gameState.numberOfHints, 3);
+		assertEquals(gameState.numberOfGuessesMade, 0);
+		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
+	}
+
+	@Test
+	public void zeroHintsGameStateInitialisationTwo() {
+		GameState gameState = new GameState("London", 7, 0);
+
+		ArrayList<Character> letters = new ArrayList<>();
+		letters.add('l');
+		letters.add('o');
+		letters.add('n');
+		letters.add('d');
+
+		assertEquals(gameState.targetName, "London");
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
+		assertEquals(gameState.numberOfHints, 0);
+		assertEquals(gameState.numberOfGuessesMade, 0);
+		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
+	}
+
+	@Test
+	public void negativeHintsGameStateInitialisationTwo() {
+		GameState gameState = new GameState("London", 7, -4);
+
+		ArrayList<Character> letters = new ArrayList<>();
+		letters.add('l');
+		letters.add('o');
+		letters.add('n');
+		letters.add('d');
+
+		assertEquals(gameState.targetName, "London");
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
+		assertEquals(gameState.numberOfHints, 3);
+		assertEquals(gameState.numberOfGuessesMade, 0);
+		assertEquals(gameState.lettersGuessedWrong, letters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 	}
 
 }

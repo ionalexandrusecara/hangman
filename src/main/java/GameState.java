@@ -27,10 +27,18 @@ public class GameState {
 				lettersGuessedWrong.add(Character.toLowerCase(targetName.charAt(i)));
 		}
 
-		
+		if(numberOfGuessesRemaining <= 0){
+			this.numberOfGuessesRemaining = 10;
+		} else {
+			this.numberOfGuessesRemaining = numberOfGuessesRemaining;
+		}
+		if(numberOfHints < 0){
+			this.numberOfHints = 3;
+		} else {
+			this.numberOfHints = numberOfHints;
+		}
+
 		this.numberOfGuessesMade = 0;
-		this.numberOfGuessesRemaining = numberOfGuessesRemaining;
-		this.numberOfHints = numberOfHints;
 	}
 	
 	void showWord(String word) {
