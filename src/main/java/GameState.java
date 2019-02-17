@@ -14,17 +14,22 @@ public class GameState {
 	public Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 	
 	public GameState(String targetName, int numberOfGuessesRemaining, int numberOfHints) {
+		if(targetName == null){
+			this.targetName = "";
+			throw new NullPointerException();
+		}
+		this.targetName = targetName;
 		lettersGuessedWrong = new ArrayList<Character>();
 		lettersGuessedCorrect = new ArrayList<Character>();
 		
-		for(int i = 0; i < targetName.length(); ++i) {
+		for(int i = 0; i < targetName.length(); i++) {
 			if (!lettersGuessedWrong.contains(Character.toLowerCase(targetName.charAt(i))))
 				lettersGuessedWrong.add(Character.toLowerCase(targetName.charAt(i)));
 		}
-		//System.out.println(missing);
+
 		
-		this.numberOfGuessesMade = 0; // guesses made
-		this.numberOfGuessesRemaining = numberOfGuessesRemaining; // guesses remaining
+		this.numberOfGuessesMade = 0;
+		this.numberOfGuessesRemaining = numberOfGuessesRemaining;
 		this.numberOfHints = numberOfHints;
 	}
 	
@@ -33,7 +38,7 @@ public class GameState {
 			if (lettersGuessedCorrect.contains(word.charAt(i))) {
 				System.out.print(word.charAt(i));
 			} else {
-				System.out.print("-");
+				System.out.print("_");
 			}
 		}
 		System.out.println("");
