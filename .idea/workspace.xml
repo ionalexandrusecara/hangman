@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="95731664-64f0-40af-b1b2-50b1cdd2f748" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/DictionaryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/DictionaryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DictionaryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DictionaryTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,23 +30,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+            <state relative-caret-position="300">
+              <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DictionaryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="463">
+              <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -146,7 +152,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550425186519" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550425831104" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -218,12 +224,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommandOptionsTest - 2019.02.17 at 16h 52m 48s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DictionaryTest - 2019.02.17 at 17h 11m 44s.xml">
-      <configuration name="DictionaryTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DictionaryTest - 2019.02.17 at 17h 21m 16s.xml">
       <configuration name="DictionaryTest" configurationId="JUnit" />
     </history-entry>
@@ -246,6 +246,12 @@
       <configuration name="DictionaryTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DictionaryTest - 2019.02.17 at 17h 26m 57s.xml">
+      <configuration name="DictionaryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DictionaryTest - 2019.02.17 at 17h 39m 44s.xml">
+      <configuration name="DictionaryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DictionaryTest - 2019.02.17 at 17h 49m 23s.xml">
       <configuration name="DictionaryTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -294,13 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="90" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -345,20 +344,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+        <state relative-caret-position="255">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DictionaryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="463">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
         </state>
       </provider>
     </entry>

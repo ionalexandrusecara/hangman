@@ -46,5 +46,13 @@ public class DictionaryTest {
         assertTrue(Arrays.asList(Dictionary.cityNames).contains(cityName));
     }
 
+    @Test
+    public void zeroCategoryGetRandomNameTest() {
+        int category = 0;
+        String cityName = Dictionary.getRandomName(category);
+        assertEquals(category, 0);
+        assertTrue(Arrays.asList(Dictionary.cityNames).contains(cityName));
+    }
+
 
 }
