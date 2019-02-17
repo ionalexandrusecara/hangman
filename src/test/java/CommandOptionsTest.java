@@ -160,6 +160,42 @@ public class CommandOptionsTest {
 
 	@Test
 	public void fileInputCommandOptionsTest() {
+		String[] args = {"--file", "asd.txt"};
+		CommandOptions commandOptions = new CommandOptions(args);
+		assertEquals(commandOptions.maxGuesses, 10);
+		assertEquals(commandOptions.maxHints, 3);
+		assertEquals(commandOptions.wordsDictionary, "asd.txt");
+	}
+
+	@Test
+	public void fileAndRandomInputCommandOptionsTest() {
+		String[] args = {"asd", "92" ,"--file", "asd.txt", "odo"};
+		CommandOptions commandOptions = new CommandOptions(args);
+		assertEquals(commandOptions.maxGuesses, 10);
+		assertEquals(commandOptions.maxHints, 3);
+		assertEquals(commandOptions.wordsDictionary, "asd.txt");
+	}
+
+	@Test
+	public void nullFileInputCommandOptionsTest() {
+		String[] args = {"asd", "92" ,"--file", null, "odo"};
+		CommandOptions commandOptions = new CommandOptions(args);
+		assertEquals(commandOptions.maxGuesses, 10);
+		assertEquals(commandOptions.maxHints, 3);
+		assertEquals(commandOptions.wordsDictionary, "");
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void noFileInputCommandOptionsTest() {
+		String[] args = {"--file"};
+		CommandOptions commandOptions = new CommandOptions(args);
+		assertEquals(commandOptions.maxGuesses, 10);
+		assertEquals(commandOptions.maxHints, 3);
+		assertEquals(commandOptions.wordsDictionary, "");
+	}
+
+	@Test
+	public void normalInputCommandOptionsTest1() {
 		String[] args = { "--guesses", "2", "--hints", "4", "--file", "words.txt" };
 		CommandOptions commandOptions = new CommandOptions(args);
 		assertEquals(commandOptions.maxGuesses, 2);
