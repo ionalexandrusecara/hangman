@@ -6,6 +6,9 @@ public class CommandOptions {
 	private String wordsDictionary;
 
 	CommandOptions(String[] args) {
+		if(args == null){
+			throw new NullPointerException();
+		}
 		maxGuesses = 10;
 		maxHints = 3;
 		wordsDictionary = "";

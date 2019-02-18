@@ -195,12 +195,18 @@ public class CommandOptionsTest {
 	}
 
 	@Test
-	public void normalInputCommandOptionsTest1() {
+	public void normalInputCommandOptionsTest() {
 		String[] args = { "--guesses", "2", "--hints", "4", "--file", "words.txt" };
 		CommandOptions commandOptions = new CommandOptions(args);
 		assertEquals(commandOptions.getMaxGuesses(), 2);
 		assertEquals(commandOptions.getMaxHints(), 4);
 		assertEquals(commandOptions.getWordsDictionary(), "words.txt");
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void nullInputCommandOptionsTest() {
+		String[] args = null;
+		CommandOptions commandOptions = new CommandOptions(args);
 	}
 
 }
