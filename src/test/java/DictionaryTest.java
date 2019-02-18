@@ -2,9 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -185,6 +183,27 @@ public class DictionaryTest {
 
         assertEquals(targetName, "");
         assertEquals(Dictionary.customNames.size(), 0);
+    }
+
+    @Test(expected = FileNotFoundException.class)
+    public void wrongFileGetFileReaderTest() throws IOException {
+        String wordSource = "oneName";
+
+        BufferedReader reader = Dictionary.getFileReader(wordSource);
+    }
+
+    @Test(expected = FileNotFoundException.class)
+    public void emptyNameFileGetFileReaderTest() throws IOException {
+        String wordSource = "";
+
+        BufferedReader reader = Dictionary.getFileReader(wordSource);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void nullFileGetFileReaderTest() throws IOException {
+        String wordSource = null;
+
+        BufferedReader reader = Dictionary.getFileReader(wordSource);
     }
 
 }
