@@ -56,18 +56,31 @@ public class GameState {
 	boolean guessLetter(String userGuess) {
 		int i;
 		char letter;
-		
-		System.out.print("Guess a letter or word (? for a hint): ");
-		
-		if (userGuess.length() > 1) {
-			if (userGuess==targetName) {
-				lettersGuessedWrong.clear();
-				return true;
-			} else return false;
+
+		if(userGuess == null){
+			numberOfGuessesMade++;
+			numberOfGuessesRemaining--;
+			return false;
+		}
+
+		if(userGuess.length() == 0){
+			numberOfGuessesMade++;
+			numberOfGuessesRemaining--;
+			return false;
 		}
 		
-		letter = userGuess.charAt(0);
-		System.out.println("letter: " + letter);
+		if (userGuess.length() > 1) {
+			if (userGuess.equalsIgnoreCase(targetName)) {
+				lettersGuessedWrong.clear();
+				return true;
+			} else {
+				numberOfGuessesMade++;
+				numberOfGuessesRemaining--;
+				return false;
+			}
+		}
+		
+		letter = userGuess.toLowerCase().charAt(0);
 		
 		if (letter == '?') {
 			hint();
@@ -75,10 +88,9 @@ public class GameState {
 		}
 
 		for(i = 0; i < lettersGuessedWrong.size(); ++i) {
-			if (lettersGuessedWrong.get(i) == letter) {
+			if (lettersGuessedWrong.get(i).equals(letter)) {
 				lettersGuessedWrong.remove(i);
 				lettersGuessedCorrect.add(letter);
-				numberOfHints++;
 				numberOfGuessesMade++;
 				numberOfGuessesRemaining--;
 				return true;

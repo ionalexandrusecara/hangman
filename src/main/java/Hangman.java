@@ -24,7 +24,9 @@ public class Hangman {
 
 			System.out.println("Guesses remaining: " + gameState.numberOfGuessesRemaining);
 
-			userGuess = scanner.next().toLowerCase();
+			System.out.print("Guess a letter or word (? for a hint): ");
+
+			userGuess = scanner.next();
 			isGuessCorrect = gameState.guessLetter(userGuess);
 
 			if (isGuessCorrect) System.out.println("Good guess!");
