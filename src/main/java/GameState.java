@@ -43,15 +43,14 @@ public class GameState {
 	}
 	
 	void showWord(String word) {
-		for (int i = 0; i < word.length(); ++i) {
-			if (lettersGuessedCorrect.contains(word.charAt(i))) {
+		for (int i = 0; i < word.length(); i++) {
+			if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
 				System.out.print(word.charAt(i));
 			} else {
-				System.out.print("_");
+				System.out.print("-");
 			}
 		}
 		System.out.println("");
-		// System.out.println(missing);
 	}
 	
 	boolean guessLetter(String userGuess) {
@@ -68,22 +67,25 @@ public class GameState {
 		}
 		
 		letter = userGuess.charAt(0);
+		System.out.println("letter: " + letter);
 		
 		if (letter == '?') {
 			hint();
 			return false;
 		}
-		
-		for(i = 0; i < lettersGuessedWrong.size(); ++i) { // Loop over the not got
+
+		for(i = 0; i < lettersGuessedWrong.size(); ++i) {
 			if (lettersGuessedWrong.get(i) == letter) {
 				lettersGuessedWrong.remove(i);
 				lettersGuessedCorrect.add(letter);
 				numberOfHints++;
+				numberOfGuessesMade++;
+				numberOfGuessesRemaining--;
 				return true;
 			}
 		}
 
-		numberOfGuessesMade++; // One more guess
+		numberOfGuessesMade++;
 		numberOfGuessesRemaining--;
 		return false;
 	}

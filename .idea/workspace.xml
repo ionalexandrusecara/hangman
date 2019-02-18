@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="95731664-64f0-40af-b1b2-50b1cdd2f748" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/GameState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/GameStateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/GameStateTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hangman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameStateTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="196" column="5" selection-start-line="196" selection-start-column="5" selection-end-line="196" selection-end-column="5" />
+            <state relative-caret-position="294">
+              <caret line="236" column="29" selection-start-line="236" selection-start-column="29" selection-end-line="236" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,24 +37,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+            <state relative-caret-position="444">
+              <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
               <folding>
-                <element signature="e#2237#2238#0" expanded="true" />
-                <element signature="e#2311#2312#0" expanded="true" />
-                <element signature="e#2330#2331#0" expanded="true" />
-                <element signature="e#2436#2437#0" expanded="true" />
+                <element signature="e#2335#2336#0" expanded="true" />
+                <element signature="e#2460#2461#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,7 +146,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550502107548" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550504827517" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -239,34 +228,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameStateTest - 2019.02.17 at 19h 49m 03s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 08m 02s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.17 at 19h 49m 43s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 08m 17s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.17 at 19h 50m 17s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 09m 06s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.17 at 19h 50m 23s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 17m 16s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.17 at 19h 51m 14s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 43m 15s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.17 at 19h 51m 40s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 43m 34s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.18 at 10h 23m 46s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 43m 50s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.18 at 10h 24m 25s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 44m 21s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.18 at 14h 54m 10s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 44m 34s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.18 at 15h 01m 38s.xml">
+    <history-entry file="GameStateTest - 2019.02.18 at 15h 46m 37s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -315,13 +304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -359,30 +341,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-          <folding>
-            <element signature="e#2237#2238#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-            <element signature="e#2436#2437#0" expanded="true" />
-          </folding>
+        <state>
+          <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+        <state relative-caret-position="330">
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+          <folding>
+            <element signature="e#2335#2336#0" expanded="true" />
+            <element signature="e#2460#2461#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="196" column="5" selection-start-line="196" selection-start-column="5" selection-end-line="196" selection-end-column="5" />
+        <state relative-caret-position="294">
+          <caret line="236" column="29" selection-start-line="236" selection-start-column="29" selection-end-line="236" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
