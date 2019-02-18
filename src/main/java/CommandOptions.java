@@ -1,9 +1,9 @@
 public class CommandOptions {
 
-	public int maxGuesses;
-	public int maxHints;
+	private int maxGuesses;
+	private int maxHints;
 	
-	String wordsDictionary;
+	private String wordsDictionary;
 
 	CommandOptions(String[] args) {
 		maxGuesses = 10;
@@ -55,5 +55,29 @@ public class CommandOptions {
 				i++;
 			}
 		}
+	}
+
+	public int getMaxGuesses() {
+		return maxGuesses;
+	}
+
+	public void setMaxGuesses(int maxGuesses) {
+		this.maxGuesses = maxGuesses;
+	}
+
+	public String getWordsDictionary() {
+		return wordsDictionary;
+	}
+
+	public int getMaxHints() {
+		return maxHints;
+	}
+
+	public void setMaxHints(int maxHints) {
+		this.maxHints = maxHints;
+	}
+
+	public void setWordsDictionary(String wordsDictionary) {
+		this.wordsDictionary = wordsDictionary;
 	}
 }

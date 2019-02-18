@@ -8,16 +8,16 @@ public class Hangman {
 		boolean isGuessCorrect;
 		String userGuess;
 
-		if(commandOptions.wordsDictionary == "") {
+		if(commandOptions.getWordsDictionary() == "") {
 			System.out.println("  1. Counties");
 			System.out.println("  2. Countries");
 			System.out.println("  3. Cities");
 
 			System.out.print("Pick a category:");
 
-			gameState = new GameState(Dictionary.getRandomName(scanner.nextInt()), commandOptions.maxGuesses, commandOptions.maxHints);
+			gameState = new GameState(Dictionary.getRandomName(scanner.nextInt()), commandOptions.getMaxGuesses(), commandOptions.getMaxHints());
 		} else {
-			gameState = new GameState(Dictionary.getRandomCustomName(commandOptions.wordsDictionary), commandOptions.maxGuesses, commandOptions.maxHints);
+			gameState = new GameState(Dictionary.getRandomCustomName(commandOptions.getWordsDictionary()), commandOptions.getMaxGuesses(), commandOptions.getMaxHints());
 		}
 
 		while (!gameState.won() && !gameState.lost()) {
