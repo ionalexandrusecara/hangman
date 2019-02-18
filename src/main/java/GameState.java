@@ -119,9 +119,10 @@ public class GameState {
 	void hint() {
 		if (numberOfHints == 0) {
 			System.out.println("No more hints allowed");
+		} else {
+			numberOfHints --;
+			System.out.print("Try: ");
+			System.out.println(lettersGuessedWrong.get((int)(Math.random()* lettersGuessedWrong.size())));
 		}
-		
-		System.out.print("Try: ");
-		System.out.println(lettersGuessedWrong.get((int)(Math.random()* lettersGuessedWrong.size())));
 	}
 }

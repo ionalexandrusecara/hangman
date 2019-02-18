@@ -404,7 +404,7 @@ public class GameStateTest {
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
 		assertEquals(gameState.numberOfGuessesRemaining, 7);
-		assertEquals(gameState.numberOfHints, 2);
+		assertEquals(gameState.numberOfHints, 1);
 		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
@@ -973,6 +973,22 @@ public class GameStateTest {
 		assertEquals(gameState.numberOfGuessesRemaining, 1);
 		assertTrue(gameState.lettersGuessedWrong.isEmpty());
 		assertFalse(gameState.lost());
+	}
+
+	@Test
+	public void hintTest() {
+		GameState gameState = new GameState("London", 7, 2);
+		gameState.hint();
+
+		assertEquals(gameState.numberOfHints, 1);
+	}
+
+	@Test
+	public void outOfHintsHintTest() {
+		GameState gameState = new GameState("London", 7, 0);
+		gameState.hint();
+
+		assertEquals(gameState.numberOfHints, 0);
 	}
 
 }
