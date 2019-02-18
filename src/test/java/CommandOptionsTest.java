@@ -208,4 +208,192 @@ public class CommandOptionsTest {
 		String[] args = null;
 		CommandOptions commandOptions = new CommandOptions(args);
 	}
+
+	@Test
+	public void parseGuessesTest() {
+		String[] args = {};
+		String[] params = { "asd", "--guesses", "6", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseGuesses(params, 1);
+		assertEquals(commandOptions.getMaxGuesses(), 6);
+	}
+
+	@Test(expected = NumberFormatException.class)
+	public void wrongIndexParseGuessesTest() {
+		String[] args = {};
+		String[] params = { "asd", "--guesses", "6", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseGuesses(params, -1);
+		assertEquals(commandOptions.getMaxGuesses(), 10);
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void wrongIndexParseGuessesTest2() {
+		String[] args = {};
+		String[] params = { "asd", "--guesses", "6", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseGuesses(params, -5);
+		assertEquals(commandOptions.getMaxGuesses(), 10);
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void outOfBoundariesIndexParseGuessesTest() {
+		String[] args = {};
+		String[] params = {"--guesses"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseGuesses(params, 0);
+		assertEquals(commandOptions.getMaxGuesses(), 10);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void nullArgsParseGuessesTest() {
+		String[] args = {};
+		String[] params = null;
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseGuesses(params, 0);
+		assertEquals(commandOptions.getMaxGuesses(), 10);
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void emptyArgsParseGuessesTest() {
+		String[] args = {};
+		String[] params = {};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseGuesses(params, 0);
+		assertEquals(commandOptions.getMaxGuesses(), 10);
+	}
+
+	@Test
+	public void parseHintsTest() {
+		String[] args = {};
+		String[] params = {"asd", "--hints", "6", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseHints(params, 1);
+		assertEquals(commandOptions.getMaxHints(), 6);
+	}
+
+	@Test(expected = NumberFormatException.class)
+	public void wrongIndexParseHintsTest() {
+		String[] args = {};
+		String[] params = {"asd", "--hints", "6", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseHints(params, -1);
+		assertEquals(commandOptions.getMaxHints(), 3);
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void wrongIndexParseHintsTest2() {
+		String[] args = {};
+		String[] params = {"asd", "--hints", "6", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseHints(params, -5);
+		assertEquals(commandOptions.getMaxHints(), 3);
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void outOfBoundariesIndexParseHintsTest() {
+		String[] args = {};
+		String[] params = {"--hints"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseHints(params, 0);
+		assertEquals(commandOptions.getMaxHints(), 3);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void nullArgsParseHintsTest() {
+		String[] args = {};
+		String[] params = null;
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseHints(params, 0);
+		assertEquals(commandOptions.getMaxHints(), 3);
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void emptyArgsParseHintsTest() {
+		String[] args = {};
+		String[] params = {};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseHints(params, 0);
+		assertEquals(commandOptions.getMaxHints(), 3);
+	}
+
+	@Test
+	public void parseFileTest() {
+		String[] args = {};
+		String[] params = {"asd", "--file", "words.txt", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseFile(params, 1);
+		assertEquals(commandOptions.getWordsDictionary(), "words.txt");
+	}
+
+	@Test
+	public void wrongIndexParseFileTest() {
+		String[] args = {};
+		String[] params = {"asd", "--file", "words.txt", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseFile(params, -1);
+		assertEquals(commandOptions.getWordsDictionary(), "asd");
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void wrongIndexParseFileTest2() {
+		String[] args = {};
+		String[] params = {"asd", "--file", "words.txt", "liv"};
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseFile(params, -5);
+		assertEquals(commandOptions.getWordsDictionary(), "asd");
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void nullInputParseFileTest() {
+		String[] args = {};
+		String[] params = null;
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseFile(params, 0);
+		assertEquals(commandOptions.getWordsDictionary(), "");
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void emptyInputParseFileTest() {
+		String[] args = {};
+		String[] params = null;
+
+		CommandOptions commandOptions = new CommandOptions(args);
+
+		commandOptions.parseFile(params, 0);
+		assertEquals(commandOptions.getWordsDictionary(), "");
+	}
+
 }
