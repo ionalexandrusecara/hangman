@@ -61,15 +61,15 @@ public class CommandOptions {
 
 				i++;
 			} else if(args[i].equals("--file")){
-				if(wordsDictionary == null){
-					wordsDictionary = "";
-				}
-
 				try{
 					wordsDictionary = args[i+1];
 				} catch (IndexOutOfBoundsException e){
 					System.out.println("Did not specify the file! Will not allow custom input!");
 					throw new IndexOutOfBoundsException();
+				}
+
+				if(wordsDictionary == null){
+					wordsDictionary = "";
 				}
 
 				i++;

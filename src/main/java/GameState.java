@@ -1,17 +1,16 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// The game state
 public class GameState {
-	public String targetName;
-	public int numberOfGuessesMade;
-	public int numberOfGuessesRemaining;
-	public int numberOfHints;
-	
-	ArrayList<Character> lettersGuessedCorrect;
-	ArrayList<Character> lettersGuessedWrong;
-	
-	public Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+	private String targetName;
+	private int numberOfGuessesMade;
+	private int numberOfGuessesRemaining;
+	private int numberOfHints;
+
+	private ArrayList<Character> lettersGuessedCorrect;
+	private ArrayList<Character> lettersGuessedWrong;
+
+	private Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 	
 	public GameState(String targetName, int numberOfGuessesRemaining, int numberOfHints) {
 		if(targetName == null){
@@ -41,7 +40,63 @@ public class GameState {
 
 		this.numberOfGuessesMade = 0;
 	}
-	
+
+	public String getTargetName() {
+		return targetName;
+	}
+
+	public void setTargetName(String targetName) {
+		this.targetName = targetName;
+	}
+
+	public int getNumberOfGuessesMade() {
+		return numberOfGuessesMade;
+	}
+
+	public void setNumberOfGuessesMade(int numberOfGuessesMade) {
+		this.numberOfGuessesMade = numberOfGuessesMade;
+	}
+
+	public int getNumberOfGuessesRemaining() {
+		return numberOfGuessesRemaining;
+	}
+
+	public void setNumberOfGuessesRemaining(int numberOfGuessesRemaining) {
+		this.numberOfGuessesRemaining = numberOfGuessesRemaining;
+	}
+
+	public int getNumberOfHints() {
+		return numberOfHints;
+	}
+
+	public void setNumberOfHints(int numberOfHints) {
+		this.numberOfHints = numberOfHints;
+	}
+
+	public ArrayList<Character> getLettersGuessedCorrect() {
+		return lettersGuessedCorrect;
+	}
+
+	public void setLettersGuessedCorrect(ArrayList<Character> lettersGuessedCorrect) {
+		this.lettersGuessedCorrect = lettersGuessedCorrect;
+	}
+
+	public ArrayList<Character> getLettersGuessedWrong() {
+		return lettersGuessedWrong;
+	}
+
+	public void setLettersGuessedWrong(ArrayList<Character> lettersGuessedWrong) {
+		this.lettersGuessedWrong = lettersGuessedWrong;
+	}
+
+	public Scanner getScanner() {
+		return scanner;
+	}
+
+	public void setScanner(Scanner scanner) {
+		this.scanner = scanner;
+	}
+
 	void showWord(String word) {
 		for (int i = 0; i < word.length(); i++) {
 			if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {

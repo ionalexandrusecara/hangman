@@ -21,9 +21,9 @@ public class Hangman {
 		}
 
 		while (!gameState.won() && !gameState.lost()) {
-			gameState.showWord(gameState.targetName);
+			gameState.showWord(gameState.getTargetName());
 
-			System.out.println("Guesses remaining: " + gameState.numberOfGuessesRemaining);
+			System.out.println("Guesses remaining: " + gameState.getNumberOfGuessesRemaining());
 
 			System.out.print("Guess a letter or word (? for a hint): ");
 
@@ -36,9 +36,9 @@ public class Hangman {
 
 		if (gameState.won()) {
 			System.out.println("Well done!");
-			System.out.println("You took " + gameState.numberOfGuessesRemaining + " guesses");
+			System.out.println("You took " + gameState.getNumberOfGuessesRemaining() + " guesses");
 		} else {
-			System.out.println("You lost! The word was " + gameState.targetName);
+			System.out.println("You lost! The word was " + gameState.getTargetName());
 		}
 	}
 
