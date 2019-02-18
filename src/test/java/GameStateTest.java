@@ -211,9 +211,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -239,9 +239,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -262,9 +262,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -290,9 +290,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -313,9 +313,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -338,9 +338,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -426,9 +426,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -443,9 +443,9 @@ public class GameStateTest {
 
 		isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 5);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 2);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -466,9 +466,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -482,12 +482,52 @@ public class GameStateTest {
 
 		isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 5);
+		assertEquals(gameState.numberOfGuessesRemaining, 6);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 2);
+		assertEquals(gameState.numberOfGuessesMade, 1);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertFalse(isGuessCorrect);
+	}
+
+	@Test
+	public void OneWrongOneCorrectGuessesLetterGuessLetterTest() {
+		GameState gameState = new GameState("London", 7, 2);
+		String userGuess = "a";
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('l');
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+
+		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfHints, 2);
+		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
+		assertFalse(isGuessCorrect);
+
+		userGuess = "l";
+
+		wrongLetters = new ArrayList<>();
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+
+		ArrayList<Character> correctLetters = new ArrayList<>();
+		correctLetters.add('l');
+
+		isGuessCorrect = gameState.guessLetter(userGuess);
+
+		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfHints, 2);
+		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
+		assertTrue(isGuessCorrect);
 	}
 
 	@Test
@@ -645,9 +685,9 @@ public class GameStateTest {
 
 		boolean isGuessCorrect = gameState.guessLetter(userGuess);
 
-		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfGuessesRemaining, 7);
 		assertEquals(gameState.numberOfHints, 2);
-		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.numberOfGuessesMade, 0);
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
 		assertTrue(isGuessCorrect);
@@ -817,6 +857,122 @@ public class GameStateTest {
 
 		assertEquals(gameState.lettersGuessedWrong.size(), 3);
 		assertFalse(gameState.won());
+	}
+
+	@Test
+	public void lostTest() {
+		GameState gameState = new GameState("London", 7, 2);
+		gameState.numberOfGuessesRemaining = 0;
+
+		assertTrue(gameState.lost());
+	}
+
+	@Test
+	public void lostTest2() {
+		GameState gameState = new GameState("London", 1, 2);
+		gameState.guessLetter("a");
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('l');
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+
+		assertEquals(gameState.numberOfGuessesRemaining, 0);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertTrue(gameState.lost());
+	}
+
+	@Test
+	public void lostTest3() {
+		GameState gameState = new GameState("London", 1, 2);
+		gameState.guessLetter("a");
+		gameState.guessLetter("b");
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('l');
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+
+		assertEquals(gameState.numberOfGuessesRemaining, 0);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertTrue(gameState.lost());
+	}
+
+	@Test
+	public void lostTest4() {
+		GameState gameState = new GameState("London", 1, 2);
+		gameState.guessLetter("l");
+		gameState.guessLetter("b");
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+
+		assertEquals(gameState.numberOfGuessesRemaining, 0);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertTrue(gameState.lost());
+	}
+
+	@Test
+	public void notLostTest() {
+		GameState gameState = new GameState("L", 1, 2);
+		gameState.guessLetter("l");
+
+		assertEquals(gameState.numberOfGuessesRemaining, 1);
+		assertTrue(gameState.lettersGuessedWrong.isEmpty());
+		assertFalse(gameState.lost());
+	}
+
+	@Test
+	public void notLostTest2() {
+		GameState gameState = new GameState("London", 1, 2);
+		gameState.guessLetter("l");
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+
+		assertEquals(gameState.numberOfGuessesRemaining, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertFalse(gameState.lost());
+	}
+
+	@Test
+	public void notLostTest3() {
+		GameState gameState = new GameState("London", 1, 2);
+		gameState.guessLetter("l");
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('o');
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+		assertEquals(gameState.numberOfGuessesRemaining, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertFalse(gameState.lost());
+
+		gameState.guessLetter("o");
+		wrongLetters = new ArrayList<>();
+		wrongLetters.add('n');
+		wrongLetters.add('d');
+		assertEquals(gameState.numberOfGuessesRemaining, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertFalse(gameState.lost());
+
+		gameState.guessLetter("n");
+		wrongLetters = new ArrayList<>();
+		wrongLetters.add('d');
+		assertEquals(gameState.numberOfGuessesRemaining, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertFalse(gameState.lost());
+
+		gameState.guessLetter("d");
+		assertEquals(gameState.numberOfGuessesRemaining, 1);
+		assertTrue(gameState.lettersGuessedWrong.isEmpty());
+		assertFalse(gameState.lost());
 	}
 
 }

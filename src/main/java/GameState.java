@@ -59,13 +59,17 @@ public class GameState {
 
 		if(userGuess == null){
 			numberOfGuessesMade++;
-			numberOfGuessesRemaining--;
+			if(numberOfGuessesRemaining > 0) {
+				numberOfGuessesRemaining--;
+			}
 			return false;
 		}
 
 		if(userGuess.length() == 0){
 			numberOfGuessesMade++;
-			numberOfGuessesRemaining--;
+			if(numberOfGuessesRemaining > 0) {
+				numberOfGuessesRemaining--;
+			}
 			return false;
 		}
 		
@@ -75,7 +79,9 @@ public class GameState {
 				return true;
 			} else {
 				numberOfGuessesMade++;
-				numberOfGuessesRemaining--;
+				if(numberOfGuessesRemaining > 0) {
+					numberOfGuessesRemaining--;
+				}
 				return false;
 			}
 		}
@@ -91,14 +97,14 @@ public class GameState {
 			if (lettersGuessedWrong.get(i).equals(letter)) {
 				lettersGuessedWrong.remove(i);
 				lettersGuessedCorrect.add(letter);
-				numberOfGuessesMade++;
-				numberOfGuessesRemaining--;
 				return true;
 			}
 		}
 
 		numberOfGuessesMade++;
-		numberOfGuessesRemaining--;
+		if(numberOfGuessesRemaining > 0) {
+			numberOfGuessesRemaining--;
+		}
 		return false;
 	}
 	
