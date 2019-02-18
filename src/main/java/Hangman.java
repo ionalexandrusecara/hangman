@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Hangman {
 
-	static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) {
+	static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) throws IOException {
 
 		boolean isGuessCorrect;
 		String userGuess;
@@ -41,7 +42,7 @@ public class Hangman {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		Scanner scanner = new Scanner(System.in, "UTF-8");
 
 		GameState gameState = null;

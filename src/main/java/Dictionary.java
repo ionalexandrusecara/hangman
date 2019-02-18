@@ -14,6 +14,13 @@ public class Dictionary {
 
     static ArrayList<String> customNames;
 
+    /**
+     * Randomly selects a county, country or city name, based on the category choice
+     * @param category
+     * @return random county name if category==1
+     *         random country name if category==2
+     *         random city name if category<1 && category>=3
+     */
     public static String getRandomName(int category) {
         if (category == 1)
             return countyNames[(int) (Math.random() * 9)];
@@ -22,29 +29,44 @@ public class Dictionary {
         return cityNames[(int) (Math.random() * 10)];
     }
 
-    public static String getRandomCustomName(String wordSource){
+    public static String getRandomCustomName(String wordSource) throws IOException{
         String line;
         customNames = new ArrayList<String>();
 
-        try {
-            FileReader file = new FileReader(wordSource);
-            BufferedReader reader = new BufferedReader(file);
+        if(wordSource == null){
+            throw new NullPointerException();
+        }
+
+        BufferedReader reader = getFileReader(wordSource);
+
+        try{
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
                 if (!line.isEmpty()) {
                     customNames.add(line);
                 }
             }
-            if(customNames.size() == 0){
-                return "";
-            }
-            return customNames.get((int) (Math.random() * customNames.size()));
+        } catch (IOError e){
+            throw new IOException();
+        }
+
+        if(customNames.size() == 0){
+            return "";
+        }
+
+        return customNames.get((int) (Math.random() * customNames.size()));
+
+    }
+
+    public static BufferedReader getFileReader(String wordSource) throws FileNotFoundException {
+        FileReader file = null;
+        try {
+            file = new FileReader(wordSource);
+            BufferedReader reader = new BufferedReader(file);
+            return reader;
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
-            return "";
-        } catch (IOException e) {
-            System.out.println("IO ERROR");
-            return "";
+            throw new FileNotFoundException();
         }
     }
 }

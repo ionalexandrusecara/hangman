@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -58,7 +59,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void getRandomCustomNameTestOne() {
+    public void getRandomCustomNameTestOne() throws IOException{
         String wordSource = "oneName.txt";
         String targetName = Dictionary.getRandomCustomName(wordSource);
         assertEquals(targetName, "London");
@@ -66,7 +67,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void getRandomCustomNameTestTwo() {
+    public void getRandomCustomNameTestTwo() throws IOException{
         String wordSource = "twoNames.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -80,7 +81,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void specialCharactersGetRandomCustomNameTest() {
+    public void specialCharactersGetRandomCustomNameTest() throws IOException{
         String wordSource = "specialCharacters.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("123%");
@@ -94,7 +95,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void emptyLineGetRandomCustomNameTest() {
+    public void emptyLineGetRandomCustomNameTest() throws IOException{
         String wordSource = "emptyLine.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -108,7 +109,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void whiteSpaceLineGetRandomCustomNameTest() {
+    public void whiteSpaceLineGetRandomCustomNameTest() throws IOException{
         String wordSource = "whiteSpace.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -123,7 +124,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void whiteSpaceInNameGetRandomCustomNameTest() {
+    public void whiteSpaceInNameGetRandomCustomNameTest() throws IOException{
         String wordSource = "whiteSpace2.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -137,7 +138,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void sameLineNameGetRandomCustomNameTest() {
+    public void sameLineNameGetRandomCustomNameTest() throws IOException{
         String wordSource = "sameLine.txt";
 
         String targetName = Dictionary.getRandomCustomName(wordSource);
@@ -147,7 +148,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void emptyFileGetRandomCustomNameTest() {
+    public void emptyFileGetRandomCustomNameTest() throws IOException{
         String wordSource = "emptyFile.txt";
 
         String targetName = Dictionary.getRandomCustomName(wordSource);
@@ -156,14 +157,34 @@ public class DictionaryTest {
         assertEquals(Dictionary.customNames.size(), 0);
     }
 
-    /*@Test(expected = FileNotFoundException.class)
-    public void wrongFileGetRandomCustomNameTest() {
+    @Test(expected = FileNotFoundException.class)
+    public void wrongFileGetRandomCustomNameTest() throws IOException {
         String wordSource = "asd";
 
         String targetName = Dictionary.getRandomCustomName(wordSource);
 
         assertEquals(targetName, "");
         assertEquals(Dictionary.customNames.size(), 0);
-    }*/
+    }
+
+    @Test(expected = FileNotFoundException.class)
+    public void wrongFileGetRandomCustomNameTest2() throws IOException {
+        String wordSource = "";
+
+        String targetName = Dictionary.getRandomCustomName(wordSource);
+
+        assertEquals(targetName, "");
+        assertEquals(Dictionary.customNames.size(), 0);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void nullFileGetRandomCustomNameTest2() throws IOException {
+        String wordSource = null;
+
+        String targetName = Dictionary.getRandomCustomName(wordSource);
+
+        assertEquals(targetName, "");
+        assertEquals(Dictionary.customNames.size(), 0);
+    }
 
 }
