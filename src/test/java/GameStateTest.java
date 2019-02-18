@@ -220,6 +220,34 @@ public class GameStateTest {
 	}
 
 	@Test
+	public void correctLetterGuessLetterTest() {
+		GameState gameState = new GameState("Edinburgh", 7, 2);
+		String userGuess = "b";
+
+		ArrayList<Character> wrongLetters = new ArrayList<>();
+		wrongLetters.add('e');
+		wrongLetters.add('d');
+		wrongLetters.add('i');
+		wrongLetters.add('n');
+		wrongLetters.add('u');
+		wrongLetters.add('r');
+		wrongLetters.add('g');
+		wrongLetters.add('h');
+
+		ArrayList<Character> correctLetters = new ArrayList<>();
+		correctLetters.add('b');
+
+		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+		assertEquals(gameState.numberOfGuessesRemaining, 6);
+		assertEquals(gameState.numberOfHints, 2);
+		assertEquals(gameState.numberOfGuessesMade, 1);
+		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
+		assertEquals(gameState.lettersGuessedCorrect, correctLetters);
+		assertTrue(isGuessCorrect);
+	}
+
+	@Test
 	public void correctCapitalLetterGuessLetterTest() {
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "L";
@@ -669,6 +697,126 @@ public class GameStateTest {
 		assertEquals(gameState.lettersGuessedWrong, wrongLetters);
 		assertTrue(gameState.lettersGuessedCorrect.isEmpty());
 		assertFalse(isGuessCorrect);
+	}
+
+	@Test
+	public void wonTest() {
+		GameState gameState = new GameState("London", 7, 2);
+		gameState.lettersGuessedWrong.clear();
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 0);
+		assertTrue(gameState.won());
+	}
+
+	@Test
+	public void wonTest2() {
+		GameState gameState = new GameState("London", 7, 2);
+
+		gameState.guessLetter("L");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("o");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("n");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("d");
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 0);
+		assertTrue(gameState.won());
+	}
+
+	@Test
+	public void wonLowerCaseLettersTest() {
+		GameState gameState = new GameState("London", 7, 2);
+
+		gameState.guessLetter("l");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("o");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("n");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("d");
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 0);
+		assertTrue(gameState.won());
+	}
+
+	@Test
+	public void wonCapitalLettersTest() {
+		GameState gameState = new GameState("London", 7, 2);
+
+		gameState.guessLetter("L");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("O");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("N");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("D");
+
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 0);
+		assertTrue(gameState.won());
+	}
+
+	@Test
+	public void wonWithWrongGuessLettersTest() {
+		GameState gameState = new GameState("London", 7, 2);
+
+		gameState.guessLetter("L");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("O");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("X");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("N");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("D");
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 0);
+		assertTrue(gameState.won());
+	}
+
+	@Test
+	public void notWonTest() {
+		GameState gameState = new GameState("London", 7, 2);
+
+		gameState.guessLetter("L");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("O");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("X");
+		assertFalse(gameState.won());
+
+		gameState.guessLetter("N");
+		assertFalse(gameState.won());
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 1);
+		assertFalse(gameState.won());
+	}
+
+	@Test
+	public void notWonTest2() {
+		GameState gameState = new GameState("London", 7, 2);
+
+		gameState.guessLetter("L");
+		assertFalse(gameState.won());
+
+		assertEquals(gameState.lettersGuessedWrong.size(), 3);
+		assertFalse(gameState.won());
 	}
 
 }
