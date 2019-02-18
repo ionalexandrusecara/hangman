@@ -32,6 +32,7 @@ public class GameState {
 		} else {
 			this.numberOfGuessesRemaining = numberOfGuessesRemaining;
 		}
+
 		if(numberOfHints < 0){
 			this.numberOfHints = 3;
 		} else {
@@ -53,22 +54,20 @@ public class GameState {
 		// System.out.println(missing);
 	}
 	
-	boolean guessLetter() {
+	boolean guessLetter(String userGuess) {
 		int i;
 		char letter;
 		
 		System.out.print("Guess a letter or word (? for a hint): ");
 		
-		String str = scanner.next().toLowerCase();
-		
-		if (str.length() > 1) {
-			if (str==targetName) {
+		if (userGuess.length() > 1) {
+			if (userGuess==targetName) {
 				lettersGuessedWrong.clear();
 				return true;
 			} else return false;
 		}
 		
-		letter = str.charAt(0);
+		letter = userGuess.charAt(0);
 		
 		if (letter == '?') {
 			hint();

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class GameStateTest {
 
 	@Test
-	public void gameStateInitialisation() {
+	public void gameStateInitialisationTest() {
 		GameState gameState = new GameState("London", 10, 2);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -25,7 +25,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void gameStateInitialisationTwo() {
+	public void gameStateInitialisationTestTwo() {
 		GameState gameState = new GameState("ASD XYZ", 5, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -46,7 +46,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void gameStateInitialisationThree() {
+	public void gameStateInitialisationTestThree() {
 		GameState gameState = new GameState("££78AS 28", 5, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -67,7 +67,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void oneLetterTargetGameStateInitialisation() {
+	public void oneLetterTargetGameStateInitialisationTest() {
 		GameState gameState = new GameState("a", 5, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -82,7 +82,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void oneLetterTargetGameStateInitialisationTwo() {
+	public void oneLetterTargetGameStateInitialisationTestTwo() {
 		GameState gameState = new GameState("aaaaa", 5, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -97,7 +97,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void emptyTargetGameStateInitialisationTwo() {
+	public void emptyTargetGameStateInitialisationTest() {
 		GameState gameState = new GameState("", 5, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -111,7 +111,7 @@ public class GameStateTest {
 	}
 
 	@Test(expected = NullPointerException.class)
-	public void nullTargetGameStateInitialisationTwo() {
+	public void nullTargetGameStateInitialisationTest() {
 		GameState gameState = new GameState(null, 5, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -125,7 +125,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void zeroGuessesGameStateInitialisationTwo() {
+	public void zeroGuessesGameStateInitialisationTest() {
 		GameState gameState = new GameState("London", 0, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -143,7 +143,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void negativeGuessesGameStateInitialisationTwo() {
+	public void negativeGuessesGameStateInitialisationTest() {
 		GameState gameState = new GameState("London", -1, 3);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -161,7 +161,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void zeroHintsGameStateInitialisationTwo() {
+	public void zeroHintsGameStateInitialisationTest() {
 		GameState gameState = new GameState("London", 7, 0);
 
 		ArrayList<Character> letters = new ArrayList<>();
@@ -179,7 +179,7 @@ public class GameStateTest {
 	}
 
 	@Test
-	public void negativeHintsGameStateInitialisationTwo() {
+	public void negativeHintsGameStateInitialisationTest() {
 		GameState gameState = new GameState("London", 7, -4);
 
 		ArrayList<Character> letters = new ArrayList<>();

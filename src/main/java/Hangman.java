@@ -5,6 +5,7 @@ public class Hangman {
 	static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) {
 
 		boolean isGuessCorrect;
+		String userGuess;
 
 		if(commandOptions.wordsDictionary == "") {
 			System.out.println("  1. Counties");
@@ -23,7 +24,8 @@ public class Hangman {
 
 			System.out.println("Guesses remaining: " + gameState.numberOfGuessesRemaining);
 
-			isGuessCorrect = gameState.guessLetter();
+			userGuess = scanner.next().toLowerCase();
+			isGuessCorrect = gameState.guessLetter(userGuess);
 
 			if (isGuessCorrect) System.out.println("Good guess!");
 			if (!isGuessCorrect) System.out.println("Wrong guess!");
