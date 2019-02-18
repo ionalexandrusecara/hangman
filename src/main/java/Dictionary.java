@@ -29,13 +29,22 @@ public class Dictionary {
         return cityNames[(int) (Math.random() * 10)];
     }
 
+    /**
+     * Uses method 'getFileReader()' to get a BufferedReader, linked to the input file - wordsource
+     * Tries to read every single line in the file, looking for name.
+     * Empty lines are not read and the names are trimmed
+     * @param wordSource
+     * @return empty string if there are no names in the file
+     *         otherwise, a random name from the input file
+     * @throws IOException
+     */
     public static String getRandomCustomName(String wordSource) throws IOException{
-        String line;
-        customNames = new ArrayList<String>();
-
         if(wordSource == null){
             throw new NullPointerException();
         }
+
+        String line;
+        customNames = new ArrayList<String>();
 
         BufferedReader reader = getFileReader(wordSource);
 
@@ -58,6 +67,12 @@ public class Dictionary {
 
     }
 
+    /**
+     * Returns a BufferedReader object linked to input file.
+     * @param wordSource
+     * @return reader - BufferedReader object linked to input file
+     * @throws FileNotFoundException
+     */
     public static BufferedReader getFileReader(String wordSource) throws FileNotFoundException {
         FileReader file = null;
         try {
