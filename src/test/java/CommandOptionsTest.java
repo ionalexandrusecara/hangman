@@ -208,5 +208,4 @@ public class CommandOptionsTest {
 		String[] args = null;
 		CommandOptions commandOptions = new CommandOptions(args);
 	}
-
 }
