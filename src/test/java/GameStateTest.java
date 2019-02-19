@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import Exception.NotEnoughHintsException;
+
 public class GameStateTest {
 
 	@Test
@@ -20,7 +22,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 10);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -41,7 +43,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -62,7 +64,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -77,7 +79,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -92,7 +94,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -106,7 +108,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -120,7 +122,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -138,7 +140,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 10);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -156,7 +158,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 10);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -174,7 +176,7 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 0);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
@@ -192,549 +194,549 @@ public class GameStateTest {
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 3);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), letters);
+		assertEquals(gameState.getLettersNotGuessed(), letters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 	}
 
 	@Test
-	public void correctFirstLetterGuessLetterTest() {
+	public void correctFirstLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "l";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('l');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void correctLetterGuessLetterTest() {
+	public void correctLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("Edinburgh", 7, 2);
 		String userGuess = "b";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('e');
-		wrongLetters.add('d');
-		wrongLetters.add('i');
-		wrongLetters.add('n');
-		wrongLetters.add('u');
-		wrongLetters.add('r');
-		wrongLetters.add('g');
-		wrongLetters.add('h');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('e');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('i');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('u');
+        notGuessedLetters.add('r');
+        notGuessedLetters.add('g');
+        notGuessedLetters.add('h');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('b');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void correctCapitalLetterGuessLetterTest() {
+	public void correctCapitalLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "L";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('l');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void correctLastLetterGuessLetterTest() {
+	public void correctLastLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("Edinburgh", 7, 2);
 		String userGuess = "h";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('e');
-		wrongLetters.add('d');
-		wrongLetters.add('i');
-		wrongLetters.add('n');
-		wrongLetters.add('b');
-		wrongLetters.add('u');
-		wrongLetters.add('r');
-		wrongLetters.add('g');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('e');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('i');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('b');
+        notGuessedLetters.add('u');
+        notGuessedLetters.add('r');
+        notGuessedLetters.add('g');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('h');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void correctMultipleLetterGuessLetterTest() {
+	public void correctMultipleLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "o";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('o');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void correctNumberGuessLetterTest() {
+	public void correctNumberGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London13", 7, 2);
 		String userGuess = "1";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
-		wrongLetters.add('3');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('3');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('1');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void wrongGuessLetterGuessLetterTest() {
+	public void wrongGuessLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "a";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void wrongGuessLetterGuessLetterTest2() {
+	public void wrongGuessLetterGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London13", 7, 2);
 		String userGuess = "2";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
-		wrongLetters.add('1');
-		wrongLetters.add('3');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('1');
+        notGuessedLetters.add('3');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void hintGuessLetterGuessLetterTest2() {
+	public void hintGuessLetterGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "?";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 1);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void twoCorrectGuessesLetterGuessLetterTest() {
+	public void twoCorrectGuessesLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "l";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('l');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 
 		userGuess = "o";
 
-		wrongLetters = new ArrayList<>();
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+        notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		correctLetters.add('o');
 
-		isGuessCorrect = gameState.guessLetter(userGuess);
+		isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void OneCorrectOneWrongGuessesLetterGuessLetterTest() {
+	public void OneCorrectOneWrongGuessesLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "l";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('l');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 
 		userGuess = "a";
 
-		wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+        notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		isGuessCorrect = gameState.guessLetter(userGuess);
+		isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void OneWrongOneCorrectGuessesLetterGuessLetterTest() {
+	public void OneWrongOneCorrectGuessesLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "a";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 
 		userGuess = "l";
 
-		wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+        notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add('l');
 
-		isGuessCorrect = gameState.guessLetter(userGuess);
+		isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void twoWrongGuessesLetterGuessLetterTest() {
+	public void twoWrongGuessesLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "b";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 
 		userGuess = "a";
 
-		isGuessCorrect = gameState.guessLetter(userGuess);
+		isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 5);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 2);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void correctWordLetterGuessLetterTest() {
+	public void correctWordLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "london";
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertTrue(gameState.getLettersGuessedWrong().isEmpty());
+		assertTrue(gameState.getLettersNotGuessed().isEmpty());
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void correctCapitalWordLetterGuessLetterTest() {
+	public void correctCapitalWordLetterGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "LONDON";
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertTrue(gameState.getLettersGuessedWrong().isEmpty());
+		assertTrue(gameState.getLettersNotGuessed().isEmpty());
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void wrongWordGuessLetterTest() {
+	public void wrongWordGuessLetterTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = "Londn";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void wrongWordGuessLetterTest2() {
+	public void wrongWordGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("Edinburgh", 7, 2);
 		String userGuess = "Edi";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('e');
-		wrongLetters.add('d');
-		wrongLetters.add('i');
-		wrongLetters.add('n');
-		wrongLetters.add('b');
-		wrongLetters.add('u');
-		wrongLetters.add('r');
-		wrongLetters.add('g');
-		wrongLetters.add('h');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('e');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('i');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('b');
+        notGuessedLetters.add('u');
+        notGuessedLetters.add('r');
+        notGuessedLetters.add('g');
+        notGuessedLetters.add('h');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void emptyGuessGuessLetterTest2() {
+	public void emptyGuessGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("Edinburgh", 7, 2);
 		String userGuess = "";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('e');
-		wrongLetters.add('d');
-		wrongLetters.add('i');
-		wrongLetters.add('n');
-		wrongLetters.add('b');
-		wrongLetters.add('u');
-		wrongLetters.add('r');
-		wrongLetters.add('g');
-		wrongLetters.add('h');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('e');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('i');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('b');
+        notGuessedLetters.add('u');
+        notGuessedLetters.add('r');
+        notGuessedLetters.add('g');
+        notGuessedLetters.add('h');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void whiteSpaceCorrectGuessGuessLetterTest2() {
+	public void whiteSpaceCorrectGuessGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("St Andrews", 7, 2);
 		String userGuess = " ";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('s');
-		wrongLetters.add('t');
-		wrongLetters.add('a');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
-		wrongLetters.add('r');
-		wrongLetters.add('e');
-		wrongLetters.add('w');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('s');
+        notGuessedLetters.add('t');
+        notGuessedLetters.add('a');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('r');
+        notGuessedLetters.add('e');
+        notGuessedLetters.add('w');
 
 		ArrayList<Character> correctLetters = new ArrayList<>();
 		correctLetters.add(' ');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
 		assertTrue(isGuessCorrect);
 	}
 
 	@Test
-	public void whiteSpaceWrongGuessGuessLetterTest2() {
+	public void whiteSpaceWrongGuessGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("StAndrews", 7, 2);
 		String userGuess = " ";
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('s');
-		wrongLetters.add('t');
-		wrongLetters.add('a');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
-		wrongLetters.add('r');
-		wrongLetters.add('e');
-		wrongLetters.add('w');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('s');
+        notGuessedLetters.add('t');
+        notGuessedLetters.add('a');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+        notGuessedLetters.add('r');
+        notGuessedLetters.add('e');
+        notGuessedLetters.add('w');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
 
 	@Test
-	public void nullGuessGuessLetterTest2() {
+	public void nullGuessGuessLetterTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 		String userGuess = null;
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
-		boolean isGuessCorrect = gameState.guessLetter(userGuess);
+		boolean isGuessCorrect = gameState.makeGuess(userGuess);
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
 		assertEquals(gameState.getNumberOfHints(), 2);
 		assertEquals(gameState.getNumberOfGuessesMade(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
 		assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
 		assertFalse(isGuessCorrect);
 	}
@@ -742,121 +744,121 @@ public class GameStateTest {
 	@Test
 	public void wonTest() {
 		GameState gameState = new GameState("London", 7, 2);
-		gameState.getLettersGuessedWrong().clear();
+		gameState.getLettersNotGuessed().clear();
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 0);
-		assertTrue(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 0);
+		assertTrue(gameState.isGameWon());
 	}
 
 	@Test
-	public void wonTest2() {
+	public void wonTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 
-		gameState.guessLetter("L");
-		assertFalse(gameState.won());
+		gameState.makeGuess("L");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("o");
-		assertFalse(gameState.won());
+		gameState.makeGuess("o");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("n");
-		assertFalse(gameState.won());
+		gameState.makeGuess("n");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("d");
+		gameState.makeGuess("d");
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 0);
-		assertTrue(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 0);
+		assertTrue(gameState.isGameWon());
 	}
 
 	@Test
-	public void wonLowerCaseLettersTest() {
+	public void wonLowerCaseLettersTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 
-		gameState.guessLetter("l");
-		assertFalse(gameState.won());
+		gameState.makeGuess("l");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("o");
-		assertFalse(gameState.won());
+		gameState.makeGuess("o");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("n");
-		assertFalse(gameState.won());
+		gameState.makeGuess("n");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("d");
+		gameState.makeGuess("d");
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 0);
-		assertTrue(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 0);
+		assertTrue(gameState.isGameWon());
 	}
 
 	@Test
-	public void wonCapitalLettersTest() {
+	public void wonCapitalLettersTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 
-		gameState.guessLetter("L");
-		assertFalse(gameState.won());
+		gameState.makeGuess("L");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("O");
-		assertFalse(gameState.won());
+		gameState.makeGuess("O");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("N");
-		assertFalse(gameState.won());
+		gameState.makeGuess("N");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("D");
+		gameState.makeGuess("D");
 
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 0);
-		assertTrue(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 0);
+		assertTrue(gameState.isGameWon());
 	}
 
 	@Test
-	public void wonWithWrongGuessLettersTest() {
+	public void wonWithWrongGuessLettersTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 
-		gameState.guessLetter("L");
-		assertFalse(gameState.won());
+		gameState.makeGuess("L");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("O");
-		assertFalse(gameState.won());
+		gameState.makeGuess("O");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("X");
-		assertFalse(gameState.won());
+		gameState.makeGuess("X");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("N");
-		assertFalse(gameState.won());
+		gameState.makeGuess("N");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("D");
+		gameState.makeGuess("D");
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 0);
-		assertTrue(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 0);
+		assertTrue(gameState.isGameWon());
 	}
 
 	@Test
-	public void notWonTest() {
+	public void notWonTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 
-		gameState.guessLetter("L");
-		assertFalse(gameState.won());
+		gameState.makeGuess("L");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("O");
-		assertFalse(gameState.won());
+		gameState.makeGuess("O");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("X");
-		assertFalse(gameState.won());
+		gameState.makeGuess("X");
+		assertFalse(gameState.isGameWon());
 
-		gameState.guessLetter("N");
-		assertFalse(gameState.won());
+		gameState.makeGuess("N");
+		assertFalse(gameState.isGameWon());
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 1);
-		assertFalse(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 1);
+		assertFalse(gameState.isGameWon());
 	}
 
 	@Test
-	public void notWonTest2() {
+	public void notWonTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
 
-		gameState.guessLetter("L");
-		assertFalse(gameState.won());
+		gameState.makeGuess("L");
+		assertFalse(gameState.isGameWon());
 
-		assertEquals(gameState.getLettersGuessedWrong().size(), 3);
-		assertFalse(gameState.won());
+		assertEquals(gameState.getLettersNotGuessed().size(), 3);
+		assertFalse(gameState.isGameWon());
 	}
 
 	@Test
@@ -864,131 +866,455 @@ public class GameStateTest {
 		GameState gameState = new GameState("London", 7, 2);
 		gameState.setNumberOfGuessesRemaining(0);
 
-		assertTrue(gameState.lost());
+		assertTrue(gameState.isGameLost());
 	}
 
 	@Test
-	public void lostTest2() {
+	public void lostTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 1, 2);
-		gameState.guessLetter("a");
+		gameState.makeGuess("a");
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertTrue(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertTrue(gameState.isGameLost());
 	}
 
 	@Test
-	public void lostTest3() {
+	public void lostTest3() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 1, 2);
-		gameState.guessLetter("a");
-		gameState.guessLetter("b");
+		gameState.makeGuess("a");
+		gameState.makeGuess("b");
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('l');
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertTrue(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertTrue(gameState.isGameLost());
 	}
 
 	@Test
-	public void lostTest4() {
+	public void lostTest4() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 1, 2);
-		gameState.guessLetter("l");
-		gameState.guessLetter("b");
+		gameState.makeGuess("l");
+		gameState.makeGuess("b");
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 0);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertTrue(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertTrue(gameState.isGameLost());
 	}
 
 	@Test
-	public void notLostTest() {
+	public void notLostTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("L", 1, 2);
-		gameState.guessLetter("l");
+		gameState.makeGuess("l");
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 1);
-		assertTrue(gameState.getLettersGuessedWrong().isEmpty());
-		assertFalse(gameState.lost());
+		assertTrue(gameState.getLettersNotGuessed().isEmpty());
+		assertFalse(gameState.isGameLost());
 	}
 
 	@Test
-	public void notLostTest2() {
+	public void notLostTest2() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 1, 2);
-		gameState.guessLetter("l");
+		gameState.makeGuess("l");
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertFalse(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertFalse(gameState.isGameLost());
 	}
 
 	@Test
-	public void notLostTest3() {
+	public void notLostTest3() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 1, 2);
-		gameState.guessLetter("l");
+		gameState.makeGuess("l");
 
-		ArrayList<Character> wrongLetters = new ArrayList<>();
-		wrongLetters.add('o');
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertFalse(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertFalse(gameState.isGameLost());
 
-		gameState.guessLetter("o");
-		wrongLetters = new ArrayList<>();
-		wrongLetters.add('n');
-		wrongLetters.add('d');
+		gameState.makeGuess("o");
+        notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertFalse(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertFalse(gameState.isGameLost());
 
-		gameState.guessLetter("n");
-		wrongLetters = new ArrayList<>();
-		wrongLetters.add('d');
+		gameState.makeGuess("n");
+        notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('d');
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 1);
-		assertEquals(gameState.getLettersGuessedWrong(), wrongLetters);
-		assertFalse(gameState.lost());
+		assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+		assertFalse(gameState.isGameLost());
 
-		gameState.guessLetter("d");
+		gameState.makeGuess("d");
 		assertEquals(gameState.getNumberOfGuessesRemaining(), 1);
-		assertTrue(gameState.getLettersGuessedWrong().isEmpty());
-		assertFalse(gameState.lost());
+		assertTrue(gameState.getLettersNotGuessed().isEmpty());
+		assertFalse(gameState.isGameLost());
 	}
 
 	@Test
-	public void hintTest() {
+	public void hintTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 2);
-		gameState.hint();
+		gameState.giveHint();
 
 		assertEquals(gameState.getNumberOfHints(), 1);
 	}
 
-	@Test
-	public void outOfHintsHintTest() {
+	@Test(expected = NotEnoughHintsException.class)
+	public void outOfHintsHintTest() throws NotEnoughHintsException{
 		GameState gameState = new GameState("London", 7, 0);
-		gameState.hint();
+		gameState.giveHint();
 
 		assertEquals(gameState.getNumberOfHints(), 0);
 	}
 
+    @Test
+    public void storeUniqueCharactersTest() {
+        GameState gameState = new GameState("London", 7, 0);
+        gameState.getLettersNotGuessed().clear();
+
+        gameState.storeUniqueCharacters("London");
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+    }
+
+    @Test
+    public void sameCharacterStoreUniqueCharactersTest() {
+        GameState gameState = new GameState("", 7, 0);
+        gameState.getLettersNotGuessed().clear();
+
+        gameState.storeUniqueCharacters("LLLLLllllLLLL");
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+    }
+
+    @Test
+    public void emptyStoreUniqueCharactersTest() {
+        GameState gameState = new GameState("", 7, 0);
+        gameState.getLettersNotGuessed().clear();
+
+        gameState.storeUniqueCharacters("");
+
+        assertTrue(gameState.getLettersNotGuessed().isEmpty());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void nullStoreUniqueCharactersTest() {
+        GameState gameState = new GameState("", 7, 0);
+        gameState.getLettersNotGuessed().clear();
+
+        gameState.storeUniqueCharacters(null);
+
+        assertTrue(gameState.getLettersNotGuessed().isEmpty());
+    }
+
+    @Test
+    public void guessLetterTest() throws NotEnoughHintsException{
+        GameState gameState = new GameState("London", 7, 2);
+        char userGuess = 'l';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        ArrayList<Character> correctLetters = new ArrayList<>();
+        correctLetters.add('l');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
+        assertTrue(isGuessCorrect);
+    }
+
+    @Test
+    public void twoLettersGuessLetterTest() throws NotEnoughHintsException{
+        GameState gameState = new GameState("London", 7, 2);
+        char userGuess = 'l';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        ArrayList<Character> correctLetters = new ArrayList<>();
+        correctLetters.add('l');
+        correctLetters.add('o');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+        userGuess = 'o';
+        isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
+        assertTrue(isGuessCorrect);
+    }
+
+    @Test
+    public void wrongLetterGuessLetterTest() throws NotEnoughHintsException{
+        GameState gameState = new GameState("London", 7, 2);
+        char userGuess = 'a';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 1);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+    }
+
+    @Test
+    public void oneWrongOneCorrectGuessLetterTest() throws NotEnoughHintsException{
+        GameState gameState = new GameState("London", 7, 2);
+        char userGuess = 'a';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 1);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+
+        ArrayList<Character> correctLetters = new ArrayList<>();
+        correctLetters.add('o');
+
+        notGuessedLetters.clear();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        userGuess = 'o';
+        isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 1);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
+        assertTrue(isGuessCorrect);
+    }
+
+    @Test
+    public void oneCorrectOneWrongGuessLetterTest() throws NotEnoughHintsException{
+        GameState gameState = new GameState("London", 7, 2);
+        char userGuess = 'o';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        ArrayList<Character> correctLetters = new ArrayList<>();
+        correctLetters.add('o');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
+        assertTrue(isGuessCorrect);
+
+        userGuess = 'a';
+        isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 1);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertEquals(gameState.getLettersGuessedCorrect(), correctLetters);
+        assertFalse(isGuessCorrect);
+    }
+
+    @Test
+    public void giveHintGuessLetterTest() throws NotEnoughHintsException{
+        GameState gameState = new GameState("London", 7, 2);
+        char userGuess = '?';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 1);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+    }
+
+    @Test(expected = NotEnoughHintsException.class)
+    public void notEnoughHintsGuessLetterTest() throws NotEnoughHintsException {
+        GameState gameState = new GameState("London", 7, 0);
+        char userGuess = '?';
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        boolean isGuessCorrect = gameState.guessLetter(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 0);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+    }
+
+    @Test
+    public void guessWordTest() throws NotEnoughHintsException {
+        GameState gameState = new GameState("London", 7, 2);
+        String userGuess = "London";
+
+        boolean isGuessCorrect = gameState.guessWord(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertTrue(gameState.getLettersNotGuessed().isEmpty());
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertTrue(isGuessCorrect);
+    }
+
+    @Test
+    public void ignoreCaseGuessWordTest() throws NotEnoughHintsException {
+        GameState gameState = new GameState("London", 7, 2);
+        String userGuess = "lONDON";
+
+        boolean isGuessCorrect = gameState.guessWord(userGuess);
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertTrue(gameState.getLettersNotGuessed().isEmpty());
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertTrue(isGuessCorrect);
+    }
+
+    @Test
+    public void emptyWrongGuessWordTest() throws NotEnoughHintsException {
+        GameState gameState = new GameState("London", 7, 2);
+        String userGuess = "";
+
+        boolean isGuessCorrect = gameState.guessWord(userGuess);
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 1);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+    }
+
+    @Test
+    public void wrongGuessWordTest() throws NotEnoughHintsException {
+        GameState gameState = new GameState("London", 7, 2);
+        String userGuess = "Londo";
+
+        boolean isGuessCorrect = gameState.guessWord(userGuess);
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 6);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 1);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void nullGuessWordTest() throws NotEnoughHintsException {
+        GameState gameState = new GameState("London", 7, 2);
+        String userGuess = null;
+
+        boolean isGuessCorrect = gameState.guessWord(userGuess);
+
+        ArrayList<Character> notGuessedLetters = new ArrayList<>();
+        notGuessedLetters.add('l');
+        notGuessedLetters.add('o');
+        notGuessedLetters.add('n');
+        notGuessedLetters.add('d');
+
+        assertEquals(gameState.getNumberOfGuessesRemaining(), 7);
+        assertEquals(gameState.getNumberOfHints(), 2);
+        assertEquals(gameState.getNumberOfGuessesMade(), 0);
+        assertEquals(gameState.getLettersNotGuessed(), notGuessedLetters);
+        assertTrue(gameState.getLettersGuessedCorrect().isEmpty());
+        assertFalse(isGuessCorrect);
+    }
 }

@@ -16,10 +16,11 @@ public class Dictionary {
 
     /**
      * Randomly selects a county, country or city name, based on the category choice
+     *
      * @param category
      * @return random county name if category==1
-     *         random country name if category==2
-     *         random city name if category<1 && category>=3
+     * random country name if category==2
+     * random city name if category<1 && category>=3
      */
     public static String getRandomName(int category) {
         if (category == 1)
@@ -33,13 +34,14 @@ public class Dictionary {
      * Uses method 'getFileReader()' to get a BufferedReader, linked to the input file - wordsource
      * Tries to read every single line in the file, looking for name.
      * Empty lines are not read and the names are trimmed
+     *
      * @param wordSource
      * @return empty string if there are no names in the file
-     *         otherwise, a random name from the input file
+     * otherwise, a random name from the input file
      * @throws IOException
      */
-    public static String getRandomCustomName(String wordSource) throws IOException{
-        if(wordSource == null){
+    public static String getRandomCustomName(String wordSource) throws IOException {
+        if (wordSource == null) {
             throw new NullPointerException();
         }
 
@@ -48,18 +50,18 @@ public class Dictionary {
 
         BufferedReader reader = getFileReader(wordSource);
 
-        try{
+        try {
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
                 if (!line.isEmpty()) {
                     customNames.add(line);
                 }
             }
-        } catch (IOError e){
+        } catch (IOError e) {
             throw new IOException();
         }
 
-        if(customNames.size() == 0){
+        if (customNames.size() == 0) {
             return "";
         }
 
@@ -69,6 +71,7 @@ public class Dictionary {
 
     /**
      * Returns a BufferedReader object linked to input file.
+     *
      * @param wordSource
      * @return reader - BufferedReader object linked to input file
      * @throws FileNotFoundException

@@ -1,183 +1,255 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import Exception.NotEnoughHintsException;
 
 public class GameState {
-	private String targetName;
-	private int numberOfGuessesMade;
-	private int numberOfGuessesRemaining;
-	private int numberOfHints;
+    private String targetName;
+    private int numberOfGuessesMade;
+    private int numberOfGuessesRemaining;
+    private int numberOfHints;
 
-	private ArrayList<Character> lettersGuessedCorrect;
-	private ArrayList<Character> lettersGuessedWrong;
+    private ArrayList<Character> lettersGuessedCorrect;
+    private ArrayList<Character> lettersNotGuessed;
 
-	private Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-	
-	public GameState(String targetName, int numberOfGuessesRemaining, int numberOfHints) {
-		if(targetName == null){
-			this.targetName = "";
-			throw new NullPointerException();
-		}
-		this.targetName = targetName;
-		lettersGuessedWrong = new ArrayList<Character>();
-		lettersGuessedCorrect = new ArrayList<Character>();
-		
-		for(int i = 0; i < targetName.length(); i++) {
-			if (!lettersGuessedWrong.contains(Character.toLowerCase(targetName.charAt(i))))
-				lettersGuessedWrong.add(Character.toLowerCase(targetName.charAt(i)));
-		}
+    private Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
-		if(numberOfGuessesRemaining <= 0){
-			this.numberOfGuessesRemaining = 10;
-		} else {
-			this.numberOfGuessesRemaining = numberOfGuessesRemaining;
-		}
+    /**
+     * Constructor of the GameState class
+     * Stores unique character values in the lettersNotGuessed ArrayList
+     * Assigns the value of numberOfGuessesRemaining.
+     * If the param value is 0 or smaller, then numberOfGuessesRemaining takes the default value = 10
+     * Assigns the value of numberOfHints.
+     * If the param value is 0 or smaller, then numberOfHints takes the default value = 3
+     * numberOfGuessesMade is initialised to 0, since the game did not start yet
+     *
+     * @param targetName
+     * @param numberOfGuessesRemaining
+     * @param numberOfHints
+     */
+    public GameState(String targetName, int numberOfGuessesRemaining, int numberOfHints) {
+        if (targetName == null) {
+            this.targetName = "";
+            throw new NullPointerException();
+        }
 
-		if(numberOfHints < 0){
-			this.numberOfHints = 3;
-		} else {
-			this.numberOfHints = numberOfHints;
-		}
+        this.targetName = targetName;
+        lettersNotGuessed = new ArrayList<Character>();
+        lettersGuessedCorrect = new ArrayList<Character>();
 
-		this.numberOfGuessesMade = 0;
-	}
+        storeUniqueCharacters(targetName);
 
-	public String getTargetName() {
-		return targetName;
-	}
+        if (numberOfGuessesRemaining <= 0) {
+            this.numberOfGuessesRemaining = 10;
+        } else {
+            this.numberOfGuessesRemaining = numberOfGuessesRemaining;
+        }
 
-	public void setTargetName(String targetName) {
-		this.targetName = targetName;
-	}
+        if (numberOfHints < 0) {
+            this.numberOfHints = 3;
+        } else {
+            this.numberOfHints = numberOfHints;
+        }
 
-	public int getNumberOfGuessesMade() {
-		return numberOfGuessesMade;
-	}
+        this.numberOfGuessesMade = 0;
+    }
 
-	public void setNumberOfGuessesMade(int numberOfGuessesMade) {
-		this.numberOfGuessesMade = numberOfGuessesMade;
-	}
+    /**
+     * Stores the unique characters of the targetName in the lettersNotGuessed ArrayList
+     *
+     * @param name
+     */
+    public void storeUniqueCharacters(String name) {
+        if(name == null){
+            throw new NullPointerException();
+        }
+        for (int i = 0; i < name.length(); i++) {
+            if (!lettersNotGuessed.contains(Character.toLowerCase(name.charAt(i))))
+                lettersNotGuessed.add(Character.toLowerCase(name.charAt(i)));
+        }
+    }
 
-	public int getNumberOfGuessesRemaining() {
-		return numberOfGuessesRemaining;
-	}
+    public String getTargetName() {
+        return targetName;
+    }
 
-	public void setNumberOfGuessesRemaining(int numberOfGuessesRemaining) {
-		this.numberOfGuessesRemaining = numberOfGuessesRemaining;
-	}
+    public void setTargetName(String targetName) {
+        this.targetName = targetName;
+    }
 
-	public int getNumberOfHints() {
-		return numberOfHints;
-	}
+    public int getNumberOfGuessesMade() {
+        return numberOfGuessesMade;
+    }
 
-	public void setNumberOfHints(int numberOfHints) {
-		this.numberOfHints = numberOfHints;
-	}
+    public void setNumberOfGuessesMade(int numberOfGuessesMade) {
+        this.numberOfGuessesMade = numberOfGuessesMade;
+    }
 
-	public ArrayList<Character> getLettersGuessedCorrect() {
-		return lettersGuessedCorrect;
-	}
+    public int getNumberOfGuessesRemaining() {
+        return numberOfGuessesRemaining;
+    }
 
-	public void setLettersGuessedCorrect(ArrayList<Character> lettersGuessedCorrect) {
-		this.lettersGuessedCorrect = lettersGuessedCorrect;
-	}
+    public void setNumberOfGuessesRemaining(int numberOfGuessesRemaining) {
+        this.numberOfGuessesRemaining = numberOfGuessesRemaining;
+    }
 
-	public ArrayList<Character> getLettersGuessedWrong() {
-		return lettersGuessedWrong;
-	}
+    public int getNumberOfHints() {
+        return numberOfHints;
+    }
 
-	public void setLettersGuessedWrong(ArrayList<Character> lettersGuessedWrong) {
-		this.lettersGuessedWrong = lettersGuessedWrong;
-	}
+    public void setNumberOfHints(int numberOfHints) {
+        this.numberOfHints = numberOfHints;
+    }
 
-	public Scanner getScanner() {
-		return scanner;
-	}
+    public ArrayList<Character> getLettersGuessedCorrect() {
+        return lettersGuessedCorrect;
+    }
 
-	public void setScanner(Scanner scanner) {
-		this.scanner = scanner;
-	}
+    public void setLettersGuessedCorrect(ArrayList<Character> lettersGuessedCorrect) {
+        this.lettersGuessedCorrect = lettersGuessedCorrect;
+    }
 
-	void showWord(String word) {
-		for (int i = 0; i < word.length(); i++) {
-			if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
-				System.out.print(word.charAt(i));
-			} else {
-				System.out.print("-");
-			}
-		}
-		System.out.println("");
-	}
-	
-	boolean guessLetter(String userGuess) {
-		int i;
-		char letter;
+    public ArrayList<Character> getLettersNotGuessed() {
+        return lettersNotGuessed;
+    }
 
-		if(userGuess == null){
-			numberOfGuessesMade++;
-			if(numberOfGuessesRemaining > 0) {
-				numberOfGuessesRemaining--;
-			}
-			return false;
-		}
+    public void setLettersNotGuessed(ArrayList<Character> lettersNotGuessed) {
+        this.lettersNotGuessed = lettersNotGuessed;
+    }
 
-		if(userGuess.length() == 0){
-			numberOfGuessesMade++;
-			if(numberOfGuessesRemaining > 0) {
-				numberOfGuessesRemaining--;
-			}
-			return false;
-		}
-		
-		if (userGuess.length() > 1) {
-			if (userGuess.equalsIgnoreCase(targetName)) {
-				lettersGuessedWrong.clear();
-				return true;
-			} else {
-				numberOfGuessesMade++;
-				if(numberOfGuessesRemaining > 0) {
-					numberOfGuessesRemaining--;
-				}
-				return false;
-			}
-		}
-		
-		letter = userGuess.toLowerCase().charAt(0);
-		
-		if (letter == '?') {
-			hint();
-			return false;
-		}
+    public Scanner getScanner() {
+        return scanner;
+    }
 
-		for(i = 0; i < lettersGuessedWrong.size(); ++i) {
-			if (lettersGuessedWrong.get(i).equals(letter)) {
-				lettersGuessedWrong.remove(i);
-				lettersGuessedCorrect.add(letter);
-				return true;
-			}
-		}
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
 
-		numberOfGuessesMade++;
-		if(numberOfGuessesRemaining > 0) {
-			numberOfGuessesRemaining--;
-		}
-		return false;
-	}
-	
-	boolean won() {
-		if (lettersGuessedWrong.size() == 0) return true; else return false;
-	}
+    /**
+     * Method that displays the already guessed letters in the correct position
+     * Method hides the letters that are not guessed yet with the dash symbol -
+     * @param word
+     */
+    void showWord(String word) {
+        for (int i = 0; i < word.length(); i++) {
+            if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
+                System.out.print(word.charAt(i));
+            } else {
+                System.out.print("-");
+            }
+        }
+        System.out.println("");
+    }
 
-	boolean lost() {
-		if (lettersGuessedWrong.size() > 0 && numberOfGuessesRemaining == 0) return true; else return false;
-	}
+    /**
+     * makeGuess takes the user's input guess then checks for error-prone cases (null, empty)
+     * If input is valid, the method calls guessLetter() in case the user's input is a single character
+     * Otherwise, the method calls guessWord() in case the user tries to guess the whole word at once
+     * @param userGuess
+     * @return
+     */
+    boolean makeGuess(String userGuess) throws NotEnoughHintsException{
+        if (userGuess == null) {
+            numberOfGuessesMade++;
+            if (numberOfGuessesRemaining > 0) {
+                numberOfGuessesRemaining--;
+            }
+            return false;
+        }
 
-	void hint() {
-		if (numberOfHints == 0) {
-			System.out.println("No more hints allowed");
-		} else {
-			numberOfHints --;
-			System.out.print("Try: ");
-			System.out.println(lettersGuessedWrong.get((int)(Math.random()* lettersGuessedWrong.size())));
-		}
-	}
+        if (userGuess.length() == 0) {
+            numberOfGuessesMade++;
+            if (numberOfGuessesRemaining > 0) {
+                numberOfGuessesRemaining--;
+            }
+            return false;
+        }
+
+        if (userGuess.length() > 1) {
+            return guessWord(userGuess);
+        }
+
+        return guessLetter(userGuess.toLowerCase().charAt(0));
+    }
+
+    /**
+     * guessLetter checks whether the user asks for a hint and in case, calls the giveHint method
+     * The method also checks whether the guess is correct and return true, otherwise it returns false
+     * @param letter
+     * @return
+     */
+    public boolean guessLetter(char letter) throws NotEnoughHintsException{
+        if (letter == '?') {
+            giveHint();
+            return false;
+        }
+
+        for (int i = 0; i < lettersNotGuessed.size(); ++i) {
+            if (lettersNotGuessed.get(i).equals(letter)) {
+                lettersNotGuessed.remove(i);
+                lettersGuessedCorrect.add(letter);
+                return true;
+            }
+        }
+
+        numberOfGuessesMade++;
+        if (numberOfGuessesRemaining > 0) {
+            numberOfGuessesRemaining--;
+        }
+        return false;
+    }
+
+    /**
+     * guessLetter checks whether the user guessed the word in a single go
+     * @param userGuess
+     * @return
+     */
+    public boolean guessWord(String userGuess){
+        if(userGuess == null){
+            throw new NullPointerException();
+        }
+
+        if (userGuess.equalsIgnoreCase(targetName)) {
+            lettersNotGuessed.clear();
+            return true;
+        } else {
+            numberOfGuessesMade++;
+            if (numberOfGuessesRemaining > 0) {
+                numberOfGuessesRemaining--;
+            }
+            return false;
+        }
+    }
+
+    /**
+     * isGameWon checks whether the game finished and the user guessed the word correctly
+     * @return
+     */
+    public boolean isGameWon() {
+        if (lettersNotGuessed.size() == 0) return true;
+        else return false;
+    }
+
+    /**
+     * isGameLost checks whether the game finished and the user still did not guess the word
+     * @return
+     */
+    public boolean isGameLost() {
+        if (lettersNotGuessed.size() > 0 && numberOfGuessesRemaining == 0) return true;
+        else return false;
+    }
+
+    /**
+     * giveHint method is called when the user input is a question mark
+     * The method checks whether the user has hints left, and in that case provides the user with a letter to try
+     */
+    public void giveHint() throws NotEnoughHintsException{
+        if (numberOfHints == 0) {
+            System.out.println("No more hints allowed");
+            throw new NotEnoughHintsException();
+        } else {
+            numberOfHints--;
+            System.out.print("Try: ");
+            System.out.println(lettersNotGuessed.get((int) (Math.random() * lettersNotGuessed.size())));
+        }
+    }
 }

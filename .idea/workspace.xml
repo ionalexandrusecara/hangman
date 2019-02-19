@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="95731664-64f0-40af-b1b2-50b1cdd2f748" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/CommandOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/CommandOptions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Hangman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Hangman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/GameStateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/GameStateTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CommandOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hangman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameStateTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -23,23 +31,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+            <state relative-caret-position="399">
+              <caret line="1314" column="58" selection-start-line="1314" selection-start-column="58" selection-end-line="1314" selection-end-column="58" />
               <folding>
-                <element signature="e#3124#3125#0" expanded="true" />
-                <element signature="e#3148#3149#0" expanded="true" />
-                <element signature="e#3187#3188#0" expanded="true" />
-                <element signature="e#3216#3217#0" expanded="true" />
-                <element signature="e#3245#3246#0" expanded="true" />
-                <element signature="e#3267#3268#0" expanded="true" />
-                <element signature="e#3313#3314#0" expanded="true" />
-                <element signature="e#3348#3349#0" expanded="true" />
-                <element signature="e#3407#3408#0" expanded="true" />
-                <element signature="e#3452#3453#0" expanded="true" />
-                <element signature="e#3494#3495#0" expanded="true" />
-                <element signature="e#3525#3526#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="209" selection-start-line="209" selection-end-line="209" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3199#3200#0" expanded="true" />
+                <element signature="e#3243#3244#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,12 +81,13 @@
         <option value="$PROJECT_DIR$/src/main/java/Words.java" />
         <option value="$PROJECT_DIR$/src/test/java/HangmanTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/DictionaryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Dictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GameState.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Hangman.java" />
-        <option value="$PROJECT_DIR$/src/test/java/GameStateTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CommandOptions.java" />
         <option value="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommandOptions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dictionary.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Hangman.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GameState.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GameStateTest.java" />
       </list>
     </option>
   </component>
@@ -121,6 +133,14 @@
               <item name="Hangman" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hangman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Hangman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hangman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -142,7 +162,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550531547076" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550535154369" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -213,9 +233,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GameStateTest" />
-        <item itemvalue="JUnit.DictionaryTest" />
         <item itemvalue="JUnit.CommandOptionsTest" />
         <item itemvalue="JUnit.HangmanTest" />
+        <item itemvalue="JUnit.DictionaryTest" />
         <item itemvalue="Application.Hangman" />
       </list>
     </recent_temporary>
@@ -234,34 +254,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 09m 29s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 07m 02s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 09m 38s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 07m 16s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 10m 05s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 07m 39s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 10m 29s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 09m 54s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 10m 48s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 10m 54s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 11m 29s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 11m 08s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 11m 42s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 11m 31s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.18 at 23h 11m 53s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 11m 50s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DictionaryTest - 2019.02.18 at 23h 12m 00s.xml">
-      <configuration name="DictionaryTest" configurationId="JUnit" />
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 12m 19s.xml">
+      <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.18 at 23h 12m 07s.xml">
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 12m 32s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -277,7 +297,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32979852" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32873806" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997735" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -310,80 +330,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/HangmanTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DictionaryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3075">
           <caret line="205" column="32" lean-forward="true" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3056">
-          <caret line="737" column="55" selection-start-line="737" selection-start-column="55" selection-end-line="737" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-          <folding>
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1394#1395#0" expanded="true" />
-            <element signature="e#1427#1428#0" expanded="true" />
-            <element signature="e#1491#1492#0" expanded="true" />
-            <element signature="e#1544#1545#0" expanded="true" />
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1798#1799#0" expanded="true" />
-            <element signature="e#1825#1826#0" expanded="true" />
-            <element signature="e#1877#1878#0" expanded="true" />
-            <element signature="e#1918#1919#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
-            <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2410#2411#0" expanded="true" />
-            <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#2475#2476#0" expanded="true" />
-            <element signature="e#2504#2505#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -398,23 +350,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/HangmanTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+        <state relative-caret-position="-1020">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding>
-            <element signature="e#3124#3125#0" expanded="true" />
-            <element signature="e#3148#3149#0" expanded="true" />
-            <element signature="e#3187#3188#0" expanded="true" />
-            <element signature="e#3216#3217#0" expanded="true" />
-            <element signature="e#3245#3246#0" expanded="true" />
-            <element signature="e#3267#3268#0" expanded="true" />
-            <element signature="e#3313#3314#0" expanded="true" />
-            <element signature="e#3348#3349#0" expanded="true" />
-            <element signature="e#3407#3408#0" expanded="true" />
-            <element signature="e#3452#3453#0" expanded="true" />
-            <element signature="e#3494#3495#0" expanded="true" />
-            <element signature="e#3525#3526#0" expanded="true" />
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="86" selection-start-line="45" selection-start-column="86" selection-end-line="45" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="209" selection-start-line="209" selection-end-line="209" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3199#3200#0" expanded="true" />
+            <element signature="e#3243#3244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="1314" column="58" selection-start-line="1314" selection-start-column="58" selection-end-line="1314" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
