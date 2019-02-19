@@ -1,7 +1,7 @@
 package Exception;
 
 public class NotEnoughHintsException extends Exception{
-    public NotEnoughHintsException(){
-        super();
+    public NotEnoughHintsException(String errorMessage){
+        super(errorMessage);
     }
 }

@@ -1,10 +1,11 @@
 import java.io.IOException;
 import java.util.Scanner;
 import Exception.NotEnoughHintsException;
+import Exception.QuestionMarkFoundException;
 
 public class Hangman {
 
-    static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) throws IOException, NotEnoughHintsException {
+    static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) throws IOException, NotEnoughHintsException, QuestionMarkFoundException {
 
         boolean isGuessCorrect;
         String userGuess;
@@ -39,11 +40,11 @@ public class Hangman {
             System.out.println("Well done!");
             System.out.println("You took " + gameState.getNumberOfGuessesRemaining() + " guesses");
         } else {
-            System.out.println("You isGameLost! The word was " + gameState.getTargetName());
+            System.out.println("You lost the game! The word was " + gameState.getTargetName());
         }
     }
 
-    public static void main(String[] args) throws IOException, NotEnoughHintsException {
+    public static void main(String[] args) throws IOException, NotEnoughHintsException, QuestionMarkFoundException {
         Scanner scanner = new Scanner(System.in, "UTF-8");
 
         GameState gameState = null;

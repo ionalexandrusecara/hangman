@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import Exception.NotEnoughHintsException;
+import Exception.QuestionMarkFoundException;
 
 public class GameState {
     private String targetName;
@@ -32,6 +34,14 @@ public class GameState {
             throw new NullPointerException();
         }
 
+        System.out.println(targetName);
+
+        try{
+            targetName = detectQuestionMarks(targetName);
+        } catch(QuestionMarkFoundException e){
+            System.out.println(e.getMessage());
+        }
+
         this.targetName = targetName;
         lettersNotGuessed = new ArrayList<Character>();
         lettersGuessedCorrect = new ArrayList<Character>();
@@ -54,17 +64,34 @@ public class GameState {
     }
 
     /**
+     * Method removes question marks from inside the target name
+     * Since '?' stands as a key in the game, the user cannot input this in the target name
+     *
+     * @param name
+     * @return
+     */
+    public String detectQuestionMarks(String name) throws QuestionMarkFoundException{
+        if (name.indexOf('?') != -1) {
+            throw new QuestionMarkFoundException("Question marks are not allowed inside the target name - ? is a key for playing the game!");
+        }
+        return name;
+    }
+
+    /**
      * Stores the unique characters of the targetName in the lettersNotGuessed ArrayList
      *
      * @param name
      */
     public void storeUniqueCharacters(String name) {
-        if(name == null){
+        if (name == null) {
             throw new NullPointerException();
         }
         for (int i = 0; i < name.length(); i++) {
             if (!lettersNotGuessed.contains(Character.toLowerCase(name.charAt(i))))
-                lettersNotGuessed.add(Character.toLowerCase(name.charAt(i)));
+                if (name.charAt(i) != ' ') {
+                    lettersNotGuessed.add(Character.toLowerCase(name.charAt(i)));
+                }
+
         }
     }
 
@@ -127,11 +154,14 @@ public class GameState {
     /**
      * Method that displays the already guessed letters in the correct position
      * Method hides the letters that are not guessed yet with the dash symbol -
+     *
      * @param word
      */
     void showWord(String word) {
         for (int i = 0; i < word.length(); i++) {
-            if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
+            if(word.toLowerCase().charAt(i) == ' '){
+                System.out.print(" ");
+            } else if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
                 System.out.print(word.charAt(i));
             } else {
                 System.out.print("-");
@@ -144,10 +174,11 @@ public class GameState {
      * makeGuess takes the user's input guess then checks for error-prone cases (null, empty)
      * If input is valid, the method calls guessLetter() in case the user's input is a single character
      * Otherwise, the method calls guessWord() in case the user tries to guess the whole word at once
+     *
      * @param userGuess
      * @return
      */
-    boolean makeGuess(String userGuess) throws NotEnoughHintsException{
+    boolean makeGuess(String userGuess) {
         if (userGuess == null) {
             numberOfGuessesMade++;
             if (numberOfGuessesRemaining > 0) {
@@ -174,12 +205,17 @@ public class GameState {
     /**
      * guessLetter checks whether the user asks for a hint and in case, calls the giveHint method
      * The method also checks whether the guess is correct and return true, otherwise it returns false
+     *
      * @param letter
      * @return
      */
-    public boolean guessLetter(char letter) throws NotEnoughHintsException{
+    public boolean guessLetter(char letter) {
         if (letter == '?') {
-            giveHint();
+            try{
+                giveHint();
+            } catch(NotEnoughHintsException e){
+                System.out.println(e.getMessage());
+            }
             return false;
         }
 
@@ -200,11 +236,12 @@ public class GameState {
 
     /**
      * guessLetter checks whether the user guessed the word in a single go
+     *
      * @param userGuess
      * @return
      */
-    public boolean guessWord(String userGuess){
-        if(userGuess == null){
+    public boolean guessWord(String userGuess) {
+        if (userGuess == null) {
             throw new NullPointerException();
         }
 
@@ -222,6 +259,7 @@ public class GameState {
 
     /**
      * isGameWon checks whether the game finished and the user guessed the word correctly
+     *
      * @return
      */
     public boolean isGameWon() {
@@ -231,6 +269,7 @@ public class GameState {
 
     /**
      * isGameLost checks whether the game finished and the user still did not guess the word
+     *
      * @return
      */
     public boolean isGameLost() {
@@ -242,10 +281,9 @@ public class GameState {
      * giveHint method is called when the user input is a question mark
      * The method checks whether the user has hints left, and in that case provides the user with a letter to try
      */
-    public void giveHint() throws NotEnoughHintsException{
+    public void giveHint() throws NotEnoughHintsException {
         if (numberOfHints == 0) {
-            System.out.println("No more hints allowed");
-            throw new NotEnoughHintsException();
+            throw new NotEnoughHintsException("You ran out of hints!");
         } else {
             numberOfHints--;
             System.out.print("Try: ");

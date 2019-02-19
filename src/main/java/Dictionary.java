@@ -66,7 +66,6 @@ public class Dictionary {
         }
 
         return customNames.get((int) (Math.random() * customNames.size()));
-
     }
 
     /**

@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="95731664-64f0-40af-b1b2-50b1cdd2f748" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/CommandOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/CommandOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Hangman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Hangman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/GameStateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/GameStateTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CommandOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandOptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hangman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GameStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameStateTest.java" afterDir="false" />
@@ -30,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="1314" column="58" selection-start-line="1314" selection-start-column="58" selection-end-line="1314" selection-end-column="58" />
+            <state relative-caret-position="414">
+              <caret line="1317" column="75" selection-start-line="1317" selection-start-column="75" selection-end-line="1317" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,15 +37,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="209" selection-start-line="209" selection-end-line="209" />
+            <state relative-caret-position="429">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3199#3200#0" expanded="true" />
-                <element signature="e#3243#3244#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,6 +57,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>NotEnough</find>
+      <find>QuestionMark</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,9 +84,10 @@
         <option value="$PROJECT_DIR$/src/main/java/CommandOptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dictionary.java" />
         <option value="$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Hangman.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Exception/QuestionMarkFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameState.java" />
         <option value="$PROJECT_DIR$/src/test/java/GameStateTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Hangman.java" />
       </list>
     </option>
   </component>
@@ -162,7 +162,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550535154369" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550538215202" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -233,10 +233,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GameStateTest" />
-        <item itemvalue="JUnit.CommandOptionsTest" />
-        <item itemvalue="JUnit.HangmanTest" />
         <item itemvalue="JUnit.DictionaryTest" />
+        <item itemvalue="JUnit.CommandOptionsTest" />
         <item itemvalue="Application.Hangman" />
+        <item itemvalue="JUnit.HangmanTest" />
       </list>
     </recent_temporary>
   </component>
@@ -254,34 +254,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 07m 02s.xml">
+    <history-entry file="DictionaryTest - 2019.02.19 at 00h 48m 34s.xml">
+      <configuration name="DictionaryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 00h 48m 37s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 52m 29s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 07m 16s.xml">
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 00h 59m 25s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DictionaryTest - 2019.02.19 at 00h 59m 29s.xml">
+      <configuration name="DictionaryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GameStateTest - 2019.02.19 at 00h 59m 32s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 07m 39s.xml">
+    <history-entry file="GameStateTest - 2019.02.19 at 01h 00m 08s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 09m 54s.xml">
+    <history-entry file="GameStateTest - 2019.02.19 at 01h 00m 28s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 10m 54s.xml">
+    <history-entry file="GameStateTest - 2019.02.19 at 01h 00m 55s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 11m 08s.xml">
-      <configuration name="GameStateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 11m 31s.xml">
-      <configuration name="GameStateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 11m 50s.xml">
-      <configuration name="GameStateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 12m 19s.xml">
-      <configuration name="GameStateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 00h 12m 32s.xml">
+    <history-entry file="GameStateTest - 2019.02.19 at 01h 01m 50s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -289,7 +289,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2801494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2801494" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -298,7 +298,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32979852" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32873806" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32873806" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997735" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -307,7 +307,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.33069083" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32979852" />
       <window_info anchor="bottom" id="CheckStyle" order="12" weight="0.32873806" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="13" weight="0.3295583" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -360,57 +360,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Exception/QuestionMarkFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="45">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#154#155#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="54" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="86" selection-start-line="45" selection-start-column="86" selection-end-line="45" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="67" column="75" selection-start-line="67" selection-start-column="75" selection-end-line="67" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="209" selection-start-line="209" selection-end-line="209" />
+        <state relative-caret-position="-936">
+          <caret line="180" column="39" selection-start-line="180" selection-start-column="39" selection-end-line="180" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3199#3200#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GameStateTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="1314" column="58" selection-start-line="1314" selection-start-column="58" selection-end-line="1314" selection-end-column="58" />
+        <state relative-caret-position="414">
+          <caret line="1317" column="75" selection-start-line="1317" selection-start-column="75" selection-end-line="1317" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Hangman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
