@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GameStateTest" tests="68" skipped="0" failures="0" errors="0" timestamp="2019-02-19T13:41:38" hostname="pc2-072-l" time="0.028">
+  <properties/>
+  <testcase name="storeUniqueCharactersTest" classname="GameStateTest" time="0.008"/>
+  <testcase name="lostTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="nullTargetGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="guessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="guessWordTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wonLowerCaseLettersTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wrongGuessLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wrongWordGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="notLostTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="hintTest" classname="GameStateTest" time="0.003"/>
+  <testcase name="wonCapitalLettersTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="nullGuessWordTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="whiteSpaceWrongGuessGuessLetterTest2" classname="GameStateTest" time="0.001"/>
+  <testcase name="gameStateInitialisationTestThree" classname="GameStateTest" time="0.0"/>
+  <testcase name="zeroHintsGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctLetterGuessLetterTest" classname="GameStateTest" time="0.001"/>
+  <testcase name="nullStoreUniqueCharactersTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="zeroGuessesGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="nullQuestionMarkDetectQuestionMarksTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="oneWrongOneCorrectGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="onlyQuestionMarkDetectQuestionMarksTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="oneCorrectOneWrongGuessesLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="oneLetterTargetGameStateInitialisationTestTwo" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctNumberGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="nullGuessGuessLetterTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctCapitalWordLetterGuessLetterTest" classname="GameStateTest" time="0.001"/>
+  <testcase name="giveHintGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="emptyTargetGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="oneWrongOneCorrectGuessesLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctFirstLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wonTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="whiteSpaceCorrectGuessGuessLetterTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="twoCorrectGuessesLetterGuessLetterTest" classname="GameStateTest" time="0.001"/>
+  <testcase name="negativeHintsGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wrongLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="emptyWrongGuessWordTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctCapitalLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="notEnoughHintsGuessLetterTest" classname="GameStateTest" time="0.001"/>
+  <testcase name="emptyStoreUniqueCharactersTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="sameCharacterStoreUniqueCharactersTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="notWonTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="notWonTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="gameStateInitialisationTest" classname="GameStateTest" time="0.001"/>
+  <testcase name="gameStateInitialisationTestTwo" classname="GameStateTest" time="0.0"/>
+  <testcase name="lostTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="lostTest3" classname="GameStateTest" time="0.0"/>
+  <testcase name="lostTest4" classname="GameStateTest" time="0.0"/>
+  <testcase name="notLostTest2" classname="GameStateTest" time="0.001"/>
+  <testcase name="notLostTest3" classname="GameStateTest" time="0.0"/>
+  <testcase name="oneCorrectOneWrongGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="outOfHintsHintTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctWordLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="oneLetterTargetGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctMultipleLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="detectQuestionMarksTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="emptyGuessGuessLetterTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="wrongGuessLetterGuessLetterTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="wonTest" classname="GameStateTest" time="0.001"/>
+  <testcase name="wrongGuessWordTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="ignoreCaseGuessWordTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="twoWrongGuessesLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="twoLettersGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="hintGuessLetterGuessLetterTest2" classname="GameStateTest" time="0.001"/>
+  <testcase name="noQuestionMarkDetectQuestionMarksTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="correctLastLetterGuessLetterTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wrongWordGuessLetterTest2" classname="GameStateTest" time="0.0"/>
+  <testcase name="negativeGuessesGameStateInitialisationTest" classname="GameStateTest" time="0.0"/>
+  <testcase name="wonWithWrongGuessLettersTest" classname="GameStateTest" time="0.001"/>
+  <system-out><![CDATA[Try: o
+Question marks are not allowed inside the target name - ? is a key for playing the game!
+Try: d
+You ran out of hints!
+Question marks are not allowed inside the target name - ? is a key for playing the game!
+Try: o
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

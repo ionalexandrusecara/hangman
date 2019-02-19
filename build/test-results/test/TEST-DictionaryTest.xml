@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DictionaryTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2019-02-19T13:41:38" hostname="pc2-072-l" time="0.035">
+  <properties/>
+  <testcase name="emptyLineGetRandomCustomNameTest" classname="DictionaryTest" time="0.006"/>
+  <testcase name="zeroCategoryGetRandomNameTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="specialCharactersGetRandomCustomNameTest" classname="DictionaryTest" time="0.002"/>
+  <testcase name="negativeCategoryGetRandomNameTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="sameLineNameGetRandomCustomNameTest" classname="DictionaryTest" time="0.003"/>
+  <testcase name="nullFileGetRandomCustomNameTest2" classname="DictionaryTest" time="0.0"/>
+  <testcase name="wrongFileGetFileReaderTest" classname="DictionaryTest" time="0.001"/>
+  <testcase name="nullFileGetFileReaderTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="getRandomCityNameTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="outOfBoundsCategoryGetRandomNameTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="getRandomCountyNameTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="getRandomCountryNameTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="emptyFileGetRandomCustomNameTest" classname="DictionaryTest" time="0.001"/>
+  <testcase name="wrongFileGetRandomCustomNameTest2" classname="DictionaryTest" time="0.001"/>
+  <testcase name="wrongFileGetRandomCustomNameTest" classname="DictionaryTest" time="0.001"/>
+  <testcase name="getRandomCustomNameTestOne" classname="DictionaryTest" time="0.007"/>
+  <testcase name="getRandomCustomNameTestTwo" classname="DictionaryTest" time="0.003"/>
+  <testcase name="whiteSpaceInNameGetRandomCustomNameTest" classname="DictionaryTest" time="0.003"/>
+  <testcase name="emptyNameFileGetFileReaderTest" classname="DictionaryTest" time="0.0"/>
+  <testcase name="whiteSpaceLineGetRandomCustomNameTest" classname="DictionaryTest" time="0.004"/>
+  <system-out><![CDATA[File not found!
+File not found!
+File not found!
+File not found!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

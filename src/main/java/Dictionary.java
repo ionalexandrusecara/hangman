@@ -1,6 +1,11 @@
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Dictionary class
+ * Stores default county, country and city names to be guessed
+ * The class also deals with getting a random target name from the default values or the user's input file
+ */
 public class Dictionary {
 
     static String[] countyNames = {"Argyll and Bute", "Caithness", "Kingdom of Fife",

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CommandOptionsTest" tests="40" skipped="0" failures="0" errors="0" timestamp="2019-02-19T13:41:38" hostname="pc2-072-l" time="0.012">
+  <properties/>
+  <testcase name="normalInputCommandOptionsTest" classname="CommandOptionsTest" time="0.003"/>
+  <testcase name="nullHintsInputCommandOptionsTest" classname="CommandOptionsTest" time="0.001"/>
+  <testcase name="nullFileInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="nonNumberHintsInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="parseFileTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="wrongIndexParseFileTest2" classname="CommandOptionsTest" time="0.001"/>
+  <testcase name="emptyArgsParseHintsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="wrongIndexParseGuessesTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="nullInputParseFileTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="noInputCommandOptionsTest" classname="CommandOptionsTest" time="0.001"/>
+  <testcase name="nullGuessesInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="parseHintsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="guessesInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="fileAndRandomInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="nullArgsParseGuessesTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="emptyInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="hintsInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="emptyInputParseFileTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="outOfBoundariesIndexParseGuessesTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="noHintsInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="hintsAndRandomInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="parseGuessesTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="guessesAndRandomInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="outOfBoundariesIndexParseHintsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="wrongIndexParseFileTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="zeroHintsInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="zeroGuessesInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="nullInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="wrongIndexParseGuessesTest2" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="noGuessesInputCommandOptionsTest" classname="CommandOptionsTest" time="0.001"/>
+  <testcase name="randomInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="negativeGuessesInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="nonNumberGuessesInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="wrongIndexParseHintsTest" classname="CommandOptionsTest" time="0.001"/>
+  <testcase name="emptyArgsParseGuessesTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="fileInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="noFileInputCommandOptionsTest" classname="CommandOptionsTest" time="0.001"/>
+  <testcase name="wrongIndexParseHintsTest2" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="negativeHintsInputCommandOptionsTest" classname="CommandOptionsTest" time="0.0"/>
+  <testcase name="nullArgsParseHintsTest" classname="CommandOptionsTest" time="0.0"/>
+  <system-out><![CDATA[Number of hints has to be an integer!
+Number of hints has to be an integer!
+Did not specify the file! Will not allow custom input!
+Did not specify the number of hints! Setting hints default value!
+Number of guesses has to be an integer!
+Number of guesses has to be an integer!
+Did not specify the number of guesses! Setting guesses default value!
+Did not specify the number of hints! Setting hints default value!
+Did not specify the number of hints! Setting hints default value!
+Invalid input - zero or negative number detected! Setting hints default value!
+Invalid input - zero or negative number detected! Setting guesses default value!
+Did not specify the number of guesses! Setting guesses default value!
+Did not specify the number of guesses! Setting guesses default value!
+Invalid input - zero or negative number detected! Setting guesses default value!
+Number of guesses has to be an integer!
+Number of hints has to be an integer!
+Did not specify the number of guesses! Setting guesses default value!
+Did not specify the file! Will not allow custom input!
+Did not specify the number of hints! Setting hints default value!
+Invalid input - zero or negative number detected! Setting hints default value!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

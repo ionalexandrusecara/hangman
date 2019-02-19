@@ -1,0 +1,30 @@
+Try: o
+YQuestion marks are not allowed inside the target name - ? is a key for playing the game!
+Try: d
+'You ran out of hints!
+8YQuestion marks are not allowed inside the target name - ? is a key for playing the game!
+@Try: o
+GH&Number of hints has to be an integer!
+GJ&Number of hints has to be an integer!
+GL7Did not specify the file! Will not allow custom input!
+GMBDid not specify the number of hints! Setting hints default value!
+GN(Number of guesses has to be an integer!
+GQ(Number of guesses has to be an integer!
+GYFDid not specify the number of guesses! Setting guesses default value!
+GZBDid not specify the number of hints! Setting hints default value!
+G^BDid not specify the number of hints! Setting hints default value!
+G`OInvalid input - zero or negative number detected! Setting hints default value!
+GaQInvalid input - zero or negative number detected! Setting guesses default value!
+GcFDid not specify the number of guesses! Setting guesses default value!
+GdFDid not specify the number of guesses! Setting guesses default value!
+GfQInvalid input - zero or negative number detected! Setting guesses default value!
+Gg(Number of guesses has to be an integer!
+Gh&Number of hints has to be an integer!
+GiFDid not specify the number of guesses! Setting guesses default value!
+Gk7Did not specify the file! Will not allow custom input!
+GlBDid not specify the number of hints! Setting hints default value!
+GmOInvalid input - zero or negative number detected! Setting hints default value!
+pvFile not found!
+p}File not found!
+p~File not found!
+p‚File not found!

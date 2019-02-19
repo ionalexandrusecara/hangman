@@ -7,6 +7,10 @@ import java.util.Scanner;
 import Exception.NotEnoughHintsException;
 import Exception.QuestionMarkFoundException;
 
+/**
+ * GameState class
+ * Stores the state of the game, analyses the user's guesses and checks the status (win or loss)
+ */
 public class GameState {
     private String targetName;
     private int numberOfGuessesMade;

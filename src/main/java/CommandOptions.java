@@ -1,3 +1,9 @@
+/**
+ * CommandOptions class
+ * Parses the user's command line input - args[]
+ * Retreives the values of guesses, hints and words dictionary file accordingly.
+ * If invalid, the default values are 10 guesses, 3 hints and an empty dictionary file
+ */
 public class CommandOptions {
 
     private int maxGuesses;

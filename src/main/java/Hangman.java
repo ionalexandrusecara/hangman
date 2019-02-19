@@ -4,6 +4,9 @@ import Exception.QuestionMarkFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Main class - Hangman
+ */
 public class Hangman {
 
     /**
@@ -45,6 +48,7 @@ public class Hangman {
     /**
      * Second stage of the game.
      * Get a random target name and initialise the GameState object with the appropriate guesses, hints and optionally file values.
+     *
      * @param scanner
      * @param commandOptions
      * @return
@@ -69,6 +73,7 @@ public class Hangman {
      * Game is won when the user fully guessed the target word.
      * Game is lost if user did not guess fully the target word and ran out of guesses.
      * The method displays appropriate messages for correct and wrong guesses.
+     *
      * @param gameState
      * @param scanner
      */
@@ -93,6 +98,7 @@ public class Hangman {
 
     /**
      * Displays the final result of the game - won or lost, together with some additional information (number of guesses or target name)
+     *
      * @param gameState
      */
     public static void checkStatus(GameState gameState) {
@@ -106,6 +112,7 @@ public class Hangman {
 
     /**
      * This is the main method. The program starts here.
+     *
      * @param args
      * @throws IOException
      * @throws NotEnoughHintsException
