@@ -400,4 +400,40 @@ public class CommandOptionsTest {
         assertEquals(commandOptions.getWordsDictionary(), "");
     }
 
+    @Test(expected = NumberFormatException.class)
+    public void tooLargeGuessesInputCommandOptionsTest() {
+        String[] args = {"--guesses", "99999999999999999999"};
+        CommandOptions commandOptions = new CommandOptions(args);
+        assertEquals(commandOptions.getMaxGuesses(), 10);
+        assertEquals(commandOptions.getMaxHints(), 3);
+        assertEquals(commandOptions.getWordsDictionary(), "");
+    }
+
+    @Test(expected = NumberFormatException.class)
+    public void tooSmallGuessesInputCommandOptionsTest() {
+        String[] args = {"--guesses", "-99999999999999999999"};
+        CommandOptions commandOptions = new CommandOptions(args);
+        assertEquals(commandOptions.getMaxGuesses(), 10);
+        assertEquals(commandOptions.getMaxHints(), 3);
+        assertEquals(commandOptions.getWordsDictionary(), "");
+    }
+
+    @Test(expected = NumberFormatException.class)
+    public void tooLargeHintsInputCommandOptionsTest() {
+        String[] args = {"--hints", "99999999999999999999"};
+        CommandOptions commandOptions = new CommandOptions(args);
+        assertEquals(commandOptions.getMaxGuesses(), 10);
+        assertEquals(commandOptions.getMaxHints(), 3);
+        assertEquals(commandOptions.getWordsDictionary(), "");
+    }
+
+    @Test(expected = NumberFormatException.class)
+    public void tooSmallHintsInputCommandOptionsTest() {
+        String[] args = {"--hints", "-99999999999999999999"};
+        CommandOptions commandOptions = new CommandOptions(args);
+        assertEquals(commandOptions.getMaxGuesses(), 10);
+        assertEquals(commandOptions.getMaxHints(), 3);
+        assertEquals(commandOptions.getWordsDictionary(), "");
+    }
+
 }

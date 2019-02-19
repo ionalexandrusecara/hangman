@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95731664-64f0-40af-b1b2-50b1cdd2f748" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CommandOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hangman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -60,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="193">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#4657#4658#0" expanded="true" />
                 <element signature="e#4690#4691#0" expanded="true" />
@@ -78,6 +71,18 @@
                 <element signature="e#5042#5043#0" expanded="true" />
                 <element signature="e#5087#5088#0" expanded="true" />
                 <element signature="e#5127#5128#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CommandOptionsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="426" column="29" selection-start-line="426" selection-start-column="29" selection-end-line="426" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,13 +120,13 @@
         <option value="$PROJECT_DIR$/src/test/java/HangmanTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Exception/NotEnoughHintsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/Exception/QuestionMarkFoundException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/DictionaryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/GameStateTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Hangman.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameState.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dictionary.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommandOptions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CommandOptionsTest.java" />
       </list>
     </option>
   </component>
@@ -196,7 +201,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550583682112" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550585655109" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -220,7 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GameStateTest">
+  <component name="RunManager" selected="JUnit.CommandOptionsTest">
     <configuration name="Hangman" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Hangman" />
       <module name="Hangman_main" />
@@ -266,9 +271,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameStateTest" />
         <item itemvalue="JUnit.CommandOptionsTest" />
         <item itemvalue="JUnit.DictionaryTest" />
+        <item itemvalue="JUnit.GameStateTest" />
         <item itemvalue="Application.Hangman" />
         <item itemvalue="JUnit.HangmanTest" />
       </list>
@@ -288,27 +293,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameStateTest - 2019.02.19 at 02h 12m 34s.xml">
-      <configuration name="GameStateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DictionaryTest - 2019.02.19 at 02h 12m 43s.xml">
-      <configuration name="DictionaryTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.19 at 02h 12m 51s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.19 at 02h 25m 52s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DictionaryTest - 2019.02.19 at 02h 25m 54s.xml">
-      <configuration name="DictionaryTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GameStateTest - 2019.02.19 at 02h 25m 56s.xml">
-      <configuration name="GameStateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandOptionsTest - 2019.02.19 at 02h 46m 12s.xml">
-      <configuration name="CommandOptionsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DictionaryTest - 2019.02.19 at 02h 46m 15s.xml">
       <configuration name="DictionaryTest" configurationId="JUnit" />
     </history-entry>
@@ -317,6 +301,27 @@
     </history-entry>
     <history-entry file="GameStateTest - 2019.02.19 at 02h 46m 23s.xml">
       <configuration name="GameStateTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DictionaryTest - 2019.02.19 at 14h 11m 12s.xml">
+      <configuration name="DictionaryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 14h 11m 19s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 14h 11m 35s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 14h 12m 06s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 14h 12m 22s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 14h 13m 29s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommandOptionsTest - 2019.02.19 at 14h 14m 11s.xml">
+      <configuration name="CommandOptionsTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -332,7 +337,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32979852" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32873806" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32873806" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997735" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -342,7 +347,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.33069083" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32979852" />
-      <window_info active="true" anchor="bottom" id="CheckStyle" order="12" visible="true" weight="0.32873806" />
+      <window_info anchor="bottom" id="CheckStyle" order="12" weight="0.32873806" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="13" weight="0.32873806" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -389,16 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CommandOptionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="398" selection-start-line="398" selection-end-line="398" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DictionaryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -438,8 +433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommandOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="193">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#4657#4658#0" expanded="true" />
             <element signature="e#4690#4691#0" expanded="true" />
@@ -453,6 +448,16 @@
             <element signature="e#5042#5043#0" expanded="true" />
             <element signature="e#5087#5088#0" expanded="true" />
             <element signature="e#5127#5128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CommandOptionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="426" column="29" selection-start-line="426" selection-start-column="29" selection-end-line="426" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
