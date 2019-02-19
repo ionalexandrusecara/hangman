@@ -39,6 +39,7 @@ public class GameState {
         try{
             targetName = detectQuestionMarks(targetName);
         } catch(QuestionMarkFoundException e){
+            targetName = targetName.replaceAll("\\?", "");
             System.out.println(e.getMessage());
         }
 
@@ -71,6 +72,9 @@ public class GameState {
      * @return
      */
     public String detectQuestionMarks(String name) throws QuestionMarkFoundException{
+        if(name == null){
+            throw new NullPointerException();
+        }
         if (name.indexOf('?') != -1) {
             throw new QuestionMarkFoundException("Question marks are not allowed inside the target name - ? is a key for playing the game!");
         }
