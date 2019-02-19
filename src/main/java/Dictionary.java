@@ -24,10 +24,10 @@ public class Dictionary {
      */
     public static String getRandomName(int category) {
         if (category == 1)
-            return countyNames[(int) (Math.random() * 9)];
+            return countyNames[(int) (Math.random() * countyNames.length)];
         if (category == 2)
-            return countryNames[(int) (Math.random() * 15)];
-        return cityNames[(int) (Math.random() * 10)];
+            return countryNames[(int) (Math.random() * countryNames.length)];
+        return cityNames[(int) (Math.random() * cityNames.length)];
     }
 
     /**
@@ -75,15 +75,17 @@ public class Dictionary {
      * @return reader - BufferedReader object linked to input file
      * @throws FileNotFoundException
      */
-    public static BufferedReader getFileReader(String wordSource) throws FileNotFoundException {
-        FileReader file = null;
+    public static BufferedReader getFileReader(String wordSource) throws FileNotFoundException, UnsupportedEncodingException {
+        InputStreamReader file = null;
         try {
-            file = new FileReader(wordSource);
+            file = new InputStreamReader(new FileInputStream(wordSource), "UTF-8");
             BufferedReader reader = new BufferedReader(file);
             return reader;
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
             throw new FileNotFoundException();
+        } catch (UnsupportedEncodingException e) {
+            throw new UnsupportedEncodingException();
         }
     }
 }

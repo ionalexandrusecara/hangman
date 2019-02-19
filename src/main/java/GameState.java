@@ -1,4 +1,7 @@
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 import Exception.NotEnoughHintsException;
@@ -13,7 +16,7 @@ public class GameState {
     private ArrayList<Character> lettersGuessedCorrect;
     private ArrayList<Character> lettersNotGuessed;
 
-    private Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+    private Scanner scanner;
 
     /**
      * Constructor of the GameState class
@@ -34,7 +37,11 @@ public class GameState {
             throw new NullPointerException();
         }
 
-        System.out.println(targetName);
+        try {
+            scanner = new Scanner(new InputStreamReader(System.in, "UTF-8")).useDelimiter("\n");
+        } catch (UnsupportedEncodingException e) {
+            throw new UnsupportedOperationException();
+        }
 
         try {
             targetName = detectQuestionMarks(targetName);
@@ -163,9 +170,9 @@ public class GameState {
      */
     void showWord(String word) {
         for (int i = 0; i < word.length(); i++) {
-            if (word.toLowerCase().charAt(i) == ' ') {
+            if (word.toLowerCase(Locale.ENGLISH).charAt(i) == ' ') {
                 System.out.print(" ");
-            } else if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
+            } else if (lettersGuessedCorrect.contains(word.toLowerCase(Locale.ENGLISH).charAt(i))) {
                 System.out.print(word.charAt(i));
             } else {
                 System.out.print("-");
@@ -176,8 +183,8 @@ public class GameState {
 
     /**
      * makeGuess takes the user's input guess then checks for error-prone cases (null, empty)
-     * If input is valid, the method calls guessLetter() in case the user's input is a single character
-     * Otherwise, the method calls guessWord() in case the user tries to guess the whole word at once
+     * If input is valid, the method calls checkLetter() in case the user's input is a single character
+     * Otherwise, the method calls checkWord() in case the user tries to guess the whole word at once
      *
      * @param userGuess
      * @return
@@ -200,20 +207,20 @@ public class GameState {
         }
 
         if (userGuess.length() > 1) {
-            return guessWord(userGuess);
+            return checkWord(userGuess);
         }
 
-        return guessLetter(userGuess.toLowerCase().charAt(0));
+        return checkLetter(userGuess.toLowerCase(Locale.ENGLISH).charAt(0));
     }
 
     /**
-     * guessLetter checks whether the user asks for a hint and in case, calls the giveHint method
+     * checkLetter checks whether the user asks for a hint and in case, calls the giveHint method
      * The method also checks whether the guess is correct and return true, otherwise it returns false
      *
      * @param letter
      * @return
      */
-    public boolean guessLetter(char letter) {
+    public boolean checkLetter(char letter) {
         if (letter == '?') {
             try {
                 giveHint();
@@ -239,12 +246,12 @@ public class GameState {
     }
 
     /**
-     * guessLetter checks whether the user guessed the word in a single go
+     * checkLetter checks whether the user guessed the word in a single go
      *
      * @param userGuess
      * @return
      */
-    public boolean guessWord(String userGuess) {
+    public boolean checkWord(String userGuess) {
         if (userGuess == null) {
             throw new NullPointerException();
         }

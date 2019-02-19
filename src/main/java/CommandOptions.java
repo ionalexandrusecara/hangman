@@ -38,6 +38,9 @@ public class CommandOptions {
                     parseFile(args, i);
                     i++;
                     break;
+                default:
+                    i++;
+                    break;
             }
         }
     }

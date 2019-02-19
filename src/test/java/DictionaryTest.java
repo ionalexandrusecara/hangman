@@ -189,21 +189,21 @@ public class DictionaryTest {
     public void wrongFileGetFileReaderTest() throws IOException {
         String wordSource = "oneName";
 
-        BufferedReader reader = Dictionary.getFileReader(wordSource);
+        Dictionary.getFileReader(wordSource);
     }
 
     @Test(expected = FileNotFoundException.class)
     public void emptyNameFileGetFileReaderTest() throws IOException {
         String wordSource = "";
 
-        BufferedReader reader = Dictionary.getFileReader(wordSource);
+        Dictionary.getFileReader(wordSource);
     }
 
     @Test(expected = NullPointerException.class)
     public void nullFileGetFileReaderTest() throws IOException {
         String wordSource = null;
 
-        BufferedReader reader = Dictionary.getFileReader(wordSource);
+        Dictionary.getFileReader(wordSource);
     }
 
 }

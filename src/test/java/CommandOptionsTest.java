@@ -207,6 +207,10 @@ public class CommandOptionsTest {
     public void nullInputCommandOptionsTest() {
         String[] args = null;
         CommandOptions commandOptions = new CommandOptions(args);
+
+        assertEquals(commandOptions.getMaxGuesses(), 10);
+        assertEquals(commandOptions.getMaxHints(), 3);
+        assertEquals(commandOptions.getWordsDictionary(), "");
     }
 
     @Test
