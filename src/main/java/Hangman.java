@@ -1,12 +1,12 @@
 import java.io.IOException;
 import java.util.Scanner;
+
 import Exception.NotEnoughHintsException;
 import Exception.QuestionMarkFoundException;
 
 public class Hangman {
 
     static void displayCLI(Scanner scanner, CommandOptions commandOptions, GameState gameState) throws IOException, NotEnoughHintsException, QuestionMarkFoundException {
-
         boolean isGuessCorrect;
         String userGuess;
 

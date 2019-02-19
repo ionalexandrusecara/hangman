@@ -57,7 +57,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void getRandomCustomNameTestOne() throws IOException{
+    public void getRandomCustomNameTestOne() throws IOException {
         String wordSource = "oneName.txt";
         String targetName = Dictionary.getRandomCustomName(wordSource);
         assertEquals(targetName, "London");
@@ -65,7 +65,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void getRandomCustomNameTestTwo() throws IOException{
+    public void getRandomCustomNameTestTwo() throws IOException {
         String wordSource = "twoNames.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -79,7 +79,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void specialCharactersGetRandomCustomNameTest() throws IOException{
+    public void specialCharactersGetRandomCustomNameTest() throws IOException {
         String wordSource = "specialCharacters.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("123%");
@@ -93,7 +93,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void emptyLineGetRandomCustomNameTest() throws IOException{
+    public void emptyLineGetRandomCustomNameTest() throws IOException {
         String wordSource = "emptyLine.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -107,7 +107,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void whiteSpaceLineGetRandomCustomNameTest() throws IOException{
+    public void whiteSpaceLineGetRandomCustomNameTest() throws IOException {
         String wordSource = "whiteSpace.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -122,7 +122,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void whiteSpaceInNameGetRandomCustomNameTest() throws IOException{
+    public void whiteSpaceInNameGetRandomCustomNameTest() throws IOException {
         String wordSource = "whiteSpace2.txt";
         ArrayList<String> possibleNames = new ArrayList<>();
         possibleNames.add("London");
@@ -136,7 +136,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void sameLineNameGetRandomCustomNameTest() throws IOException{
+    public void sameLineNameGetRandomCustomNameTest() throws IOException {
         String wordSource = "sameLine.txt";
 
         String targetName = Dictionary.getRandomCustomName(wordSource);
@@ -146,7 +146,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void emptyFileGetRandomCustomNameTest() throws IOException{
+    public void emptyFileGetRandomCustomNameTest() throws IOException {
         String wordSource = "emptyFile.txt";
 
         String targetName = Dictionary.getRandomCustomName(wordSource);

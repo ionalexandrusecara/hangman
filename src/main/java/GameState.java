@@ -36,9 +36,9 @@ public class GameState {
 
         System.out.println(targetName);
 
-        try{
+        try {
             targetName = detectQuestionMarks(targetName);
-        } catch(QuestionMarkFoundException e){
+        } catch (QuestionMarkFoundException e) {
             targetName = targetName.replaceAll("\\?", "");
             System.out.println(e.getMessage());
         }
@@ -71,8 +71,8 @@ public class GameState {
      * @param name
      * @return
      */
-    public String detectQuestionMarks(String name) throws QuestionMarkFoundException{
-        if(name == null){
+    public String detectQuestionMarks(String name) throws QuestionMarkFoundException {
+        if (name == null) {
             throw new NullPointerException();
         }
         if (name.indexOf('?') != -1) {
@@ -163,7 +163,7 @@ public class GameState {
      */
     void showWord(String word) {
         for (int i = 0; i < word.length(); i++) {
-            if(word.toLowerCase().charAt(i) == ' '){
+            if (word.toLowerCase().charAt(i) == ' ') {
                 System.out.print(" ");
             } else if (lettersGuessedCorrect.contains(word.toLowerCase().charAt(i))) {
                 System.out.print(word.charAt(i));
@@ -215,9 +215,9 @@ public class GameState {
      */
     public boolean guessLetter(char letter) {
         if (letter == '?') {
-            try{
+            try {
                 giveHint();
-            } catch(NotEnoughHintsException e){
+            } catch (NotEnoughHintsException e) {
                 System.out.println(e.getMessage());
             }
             return false;

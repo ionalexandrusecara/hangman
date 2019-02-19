@@ -1315,7 +1315,7 @@ public class GameStateTest {
     }
 
     @Test
-    public void detectQuestionMarksTest() throws QuestionMarkFoundException{
+    public void detectQuestionMarksTest() throws QuestionMarkFoundException {
         GameState gameState = new GameState("Lon?don", 7, 2);
         gameState.detectQuestionMarks(gameState.getTargetName());
 
@@ -1323,7 +1323,7 @@ public class GameStateTest {
     }
 
     @Test
-    public void noQuestionMarkDetectQuestionMarksTest() throws QuestionMarkFoundException{
+    public void noQuestionMarkDetectQuestionMarksTest() throws QuestionMarkFoundException {
         GameState gameState = new GameState("London", 7, 2);
         gameState.detectQuestionMarks(gameState.getTargetName());
 
@@ -1331,7 +1331,7 @@ public class GameStateTest {
     }
 
     @Test
-    public void onlyQuestionMarkDetectQuestionMarksTest() throws QuestionMarkFoundException{
+    public void onlyQuestionMarkDetectQuestionMarksTest() throws QuestionMarkFoundException {
         GameState gameState = new GameState("?", 7, 2);
         gameState.detectQuestionMarks(gameState.getTargetName());
 
@@ -1339,7 +1339,7 @@ public class GameStateTest {
     }
 
     @Test(expected = NullPointerException.class)
-    public void nullQuestionMarkDetectQuestionMarksTest() throws QuestionMarkFoundException{
+    public void nullQuestionMarkDetectQuestionMarksTest() throws QuestionMarkFoundException {
         GameState gameState = new GameState(null, 7, 2);
         gameState.detectQuestionMarks(gameState.getTargetName());
 
